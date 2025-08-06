@@ -4,16 +4,16 @@
         <div class="row mt-4">
             <div class="col-md-3">
                 <div class="list-group">
-                    <a href="{{ route('gedung.index') }}" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action">
                         CRUD Data Gedung
                     </a>
-                    <a href="{{ route('tenant.index') }}" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action">
                         CRUD Data Tenant
                     </a>
-                    <a href="{{ route('maintenance.index') }}" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action">
                         CRUD Data Maintenance
                     </a>
-                    <a href="{{ route('user.index') }}" class="list-group-item list-group-item-action">
+                    <a href="#" class="list-group-item list-group-item-action">
                         CRUD Data User
                     </a>
                 </div>
