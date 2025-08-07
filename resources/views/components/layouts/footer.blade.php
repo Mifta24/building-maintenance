@@ -1,39 +1,34 @@
-<footer class="bg-gray-100 text-gray-700 text-sm mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- About -->
-        <div>
-            <h3 class="font-semibold text-gray-900 mb-2">About JAPAN BUILD</h3>
-            <p>Japan's Leading Show for Building & Housing Industries. Held twice a year in Tokyo & Osaka.</p>
+<footer class="bg-blue-900 text-white">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-4">JAPAN BUILD</h3>
+                <p class="text-sm text-blue-200">International Building & Home Week</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-blue-200 hover:text-white">About the Show</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Exhibit</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Visit</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Organizer</h3>
+                <p class="text-sm text-blue-200">RX Japan Ltd.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-200 hover:text-white">FB</a>
+                    <a href="#" class="text-blue-200 hover:text-white">TW</a>
+                    <a href="#" class="text-blue-200 hover:text-white">IN</a>
+                </div>
+            </div>
         </div>
-
-        <!-- Contact -->
-        <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Contact</h3>
-            <p>Email: <a href="mailto:build-e.jp@rxglobal.com"
-                    class="text-blue-600 hover:underline">build-e.jp@rxglobal.com</a></p>
-            <p>Phone: <span class="text-gray-800">+81-3-6739-4127</span></p>
+        <div class="mt-12 border-t border-blue-800 pt-6 text-center text-sm text-blue-300">
+            <p>&copy; 2025 RX Japan Ltd. All Rights Reserved.</p>
         </div>
-
-        <!-- Policies -->
-        <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Policies</h3>
-            <ul class="space-y-1">
-                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
-                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
-                <li><a href="#" class="hover:underline">Cookie Policy</a></li>
-                <li><a href="#" class="hover:underline">Participation Policy</a></li>
-            </ul>
-        </div>
-
-        <!-- Social & Organiser -->
-        <div>
-            <h3 class="font-semibold text-gray-900 mb-2">Organiser</h3>
-            <p>RX Japan Ltd. – Japan’s Largest Trade Show Organiser.</p>
-            <p class="mt-2">Follow us on <a href="#" class="text-blue-600 hover:underline">LinkedIn</a></p>
-        </div>
-    </div>
-
-    <div class="border-t border-gray-300 py-4 text-center text-xs text-gray-500">
-        © RX Japan Ltd. | Built by RX | Accessibility | Sustainability
     </div>
 </footer>

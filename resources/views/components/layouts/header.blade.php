@@ -1,40 +1,48 @@
-<header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
-            <div class="flex-shrink-0">
-                <a href="#" class="text-xl font-bold text-blue-700">JAPAN BUILD</a>
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-1 text-xs text-gray-600 border-b">
+            <div>
+                <a href="#" class="hover:text-blue-700">RX Japan Ltd.</a>
             </div>
-
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Tokyo (Dec)</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Osaka (Aug)</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Exhibit</a>
-                <a href="#" class="text-gray-700 hover:text-blue-600 font-medium">Visit</a>
-            </nav>
-
-            <!-- CTA Buttons -->
-            <div class="hidden md:flex space-x-4">
-                <a href="#"
-                    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm font-semibold">Exhibiting
-                    Info</a>
-                <a href="#"
-                    class="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 text-sm font-semibold">Visitor
-                    Registration</a>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-blue-700">Exhibition Hub</a>
+                <a href="#" class="hover:text-blue-700">Digital Hub</a>
+                <div class="relative">
+                    <button class="flex items-center space-x-1">
+                        <span>Language (EN)</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </div>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button class="text-gray-700 hover:text-blue-600 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <nav class="flex justify-between items-center py-4">
+            <div class="flex items-center">
+                <a href="#" class="text-2xl font-extrabold text-blue-900">JAPAN BUILD</a>
+            </div>
+            <div class="hidden lg:flex items-center space-x-6 font-medium text-gray-700">
+                <a href="#" class="hover:text-blue-700">About</a>
+                <a href="#" class="hover:text-blue-700">Exhibit</a>
+                <a href="#" class="hover:text-blue-700">Visit</a>
+                <a href="#" class="hover:text-blue-700">Media</a>
+                <a href="#" class="hover:text-blue-700">Contact Us</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <a href="#"
+                    class="bg-red-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-red-700 transition duration-300 text-sm">
+                    REGISTER NOW
+                </a>
+                <button class="lg:hidden p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
+                            d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
             </div>
-        </div>
+        </nav>
     </div>
 </header>
