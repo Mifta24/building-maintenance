@@ -1,4 +1,5 @@
 <x-layouts.app>
+    <!-- Hero Section -->
     <main class="hero-bg bg-cover bg-center text-white">
         <div class="bg-black bg-opacity-50 min-h-[70vh] flex flex-col justify-center items-center text-center p-4">
             <div class="max-w-4xl">
@@ -23,6 +24,7 @@
         </div>
     </main>
 
+    <!-- About Section -->
     <section class="py-16 sm:py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -49,6 +51,7 @@
         </div>
     </section>
 
+    <!-- Concurrent Shows Section -->
     <section class="py-16 sm:py-24 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -57,6 +60,7 @@
                     covering the entire building life cycle.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Show Card 1 -->
                 <div
                     class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <img src="https://placehold.co/400x250/3B82F6/FFFFFF?text=Smart+Building"
@@ -66,6 +70,8 @@
                         <p class="text-gray-700 text-sm">Show for next-generation building development.</p>
                     </div>
                 </div>
+
+                <!-- Show Card 2 -->
                 <div
                     class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <img src="https://placehold.co/400x250/10B981/FFFFFF?text=AI+Smart+Home"
@@ -75,6 +81,8 @@
                         <p class="text-gray-700 text-sm">Specialised show for housing with AI & IoT.</p>
                     </div>
                 </div>
+
+                <!-- Show Card 3 -->
                 <div
                     class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <img src="https://placehold.co/400x250/F59E0B/FFFFFF?text=Building+Material"
@@ -84,6 +92,8 @@
                         <p class="text-gray-700 text-sm">Show for high-performance building materials.</p>
                     </div>
                 </div>
+
+                <!-- Show Card 4 -->
                 <div
                     class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                     <img src="https://placehold.co/400x250/6366F1/FFFFFF?text=Housing+Equipment"

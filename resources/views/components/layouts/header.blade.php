@@ -1,5 +1,10 @@
 <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="container mx-auto px-4">
+        <div class="flex gap-x-4 py-1 text-xs text-gray-600 border-b">
+            <a href="{{ route('landing') }}" class="hover:text-blue-700">Home</a>
+            <a href="#" class="hover:text-blue-700">Tokyo (December)</a>
+            <a href="#" class="hover:text-blue-700">Osaka (August)</a>
+        </div>
         <div class="flex justify-between items-center py-1 text-xs text-gray-600 border-b">
             <div>
                 <a href="#" class="hover:text-blue-700">RX Japan Ltd.</a>
@@ -21,19 +26,61 @@
 
         <nav class="flex justify-between items-center py-4">
             <div class="flex items-center">
-                <a href="#" class="text-2xl font-extrabold text-blue-900">JAPAN BUILD</a>
+                <a href="{{ route('landing') }}" class="text-2xl font-extrabold text-blue-900">JAPAN BUILD</a>
             </div>
             <div class="hidden lg:flex items-center space-x-6 font-medium text-gray-700">
-                <a href="#" class="hover:text-blue-700">About</a>
-                <a href="#" class="hover:text-blue-700">Exhibit</a>
-                <a href="#" class="hover:text-blue-700">Visit</a>
-                <a href="#" class="hover:text-blue-700">Media</a>
-                <a href="#" class="hover:text-blue-700">Contact Us</a>
+                <a href="{{ route('about') }}" class="hover:text-blue-700">About</a>
+                <a href="{{ route('exhibit') }}" class="hover:text-blue-700">Exhibit</a>
+                <a href="{{ route('visit') }}" class="hover:text-blue-700">Visit</a>
+                <!-- Komponen Dropdown -->
+                <!-- Komponen Dropdown -->
+                <div class="relative inline-block text-left group">
+                    <!-- Tombol Pemicu Dropdown -->
+                    <div>
+                        <button type="button"
+                            class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+                            <span>Press</span>
+                            <!-- Ikon Panah Bawah -->
+                            <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div
+                        class="origin-top-right absolute right-0 pt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block transition-all duration-300">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                            <!-- Tautan di dalam dropdown -->
+                            <a href="{{ route('mediaPartners') }}"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem">
+                                Media Partners
+                            </a>
+                            <a href="{{ route('blog') }}"
+                                class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
+                                role="menuitem">
+                                Press Release and Blog
+                            </a>
+
+                            {{-- <form method="POST" action="#" role="none">
+                                <button type="submit"
+                                    class="text-gray-700 block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
+                                    role="menuitem">
+                                    Contact Us
+                                </button>
+                            </form> --}}
+                        </div>
+                    </div>
+                </div>
+                <a href="{{ route('blog') }}" class="hover:text-blue-700">Blog</a>
             </div>
             <div class="flex items-center space-x-2">
-                <a href="#"
-                    class="bg-red-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-red-700 transition duration-300 text-sm">
-                    REGISTER NOW
+                <a href="{{ route('auth.register') }}"
+                    class="bg-blue-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition duration-300 text-sm">
+                    Exhibiting Info (Free)
                 </a>
                 <button class="lg:hidden p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
