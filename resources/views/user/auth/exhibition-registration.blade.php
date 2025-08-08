@@ -31,7 +31,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('auth.register') }}">
+            <form method="POST" action="{{ route('auth.exhibitionRegistration.send') }}">
                 @csrf
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -181,12 +181,13 @@
                 <div class="mt-6">
                     <button type="submit"
                         class="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out font-semibold">
-                        Create Account
+                        Submit
                     </button>
                 </div>
             </form>
 
-            <div class="flex items-center my-6">
+            {{-- Or Create Account --}}
+            {{-- <div class="flex items-center my-6">
                 <div class="flex-grow border-t border-gray-300"></div>
                 <span class="mx-4 text-gray-500 text-sm">OR</span>
                 <div class="flex-grow border-t border-gray-300"></div>
@@ -197,7 +198,7 @@
                 <a href="{{ route('auth.login') }}" class="font-medium text-indigo-600 hover:text-indigo-500">
                     Log in
                 </a>
-            </p>
+            </p> --}}
         </div>
     </div>
 </x-layouts.app>

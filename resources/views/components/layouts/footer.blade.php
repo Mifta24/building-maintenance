@@ -3,28 +3,52 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <h3 class="font-bold text-lg mb-4">JAPAN BUILD</h3>
-                <p class="text-sm text-blue-200">International Building & Home Week</p>
-            </div>
-            <div>
-                <h3 class="font-bold text-lg mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-blue-200 hover:text-white">About the Show</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Exhibit</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Visit</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Contact Us</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Aug. 27 (Wed) - 29 (Fri), 2025
+                            [Osaka]</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">10:00-17:00</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="font-bold text-lg mb-4">Organizer</h3>
-                <p class="text-sm text-blue-200">RX Japan Ltd.</p>
+                <h3 class="font-bold text-lg mb-4">Contact</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="mailto:build-e.jp@rxglobal.com"
+                            class="text-blue-200 hover:text-white">build-e.jp@rxglobal.com</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">+81-3-6739-4127</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-4">Policy</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-blue-200 hover:text-white">Terms &
+                            Conditions</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Privacy
+                            Policy</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Your
+                            Privacy
+                            Choices</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Participation
+                            Policy</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Cookie
+                            Policy</a></li>
+                    <li><a href="#" class="text-blue-200 hover:text-white">Cookie
+                            Settings</a></li>
+                </ul>
             </div>
             <div>
                 <h3 class="font-bold text-lg mb-4">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-blue-200 hover:text-white">FB</a>
-                    <a href="#" class="text-blue-200 hover:text-white">TW</a>
-                    <a href="#" class="text-blue-200 hover:text-white">IN</a>
-                </div>
+                <ul class="space-y-2 text-sm">
+                    <li>
+                        <a href="https://www.linkedin.com/company/japanbuild/"
+                            class="text-blue-200 hover:text-white">LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-blue-200 hover:text-white">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-blue-200 hover:text-white">Instagram</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="mt-12 border-t border-blue-800 pt-6 text-center text-sm text-blue-300">

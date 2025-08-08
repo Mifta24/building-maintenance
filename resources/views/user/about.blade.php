@@ -4,15 +4,18 @@
 
         <!-- Bagian Cerita Kami -->
         <section class="mb-20 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Cerita Kami</h2>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">What is JAPAN BUILD
+                - International Building & Home Week</h2>
             <p class="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-                Didirikan pada tahun 2024, perusahaan kami lahir dari sebuah ide sederhana: untuk menciptakan solusi
-                inovatif yang dapat memecahkan masalah nyata. Perjalanan kami dimulai di sebuah garasi kecil dengan tim
-                yang
-                bersemangat dan dedikasi tinggi. Kini, kami telah berkembang menjadi perusahaan yang melayani ribuan
-                pelanggan di seluruh Indonesia, namun semangat awal kami untuk berinovasi dan memberikan yang terbaik
-                tidak
-                pernah pudar.
+                This is Japan’s leading trade show showcasing the latest solutions for the architecture, construction,
+                and real estate industries.
+
+                Products on display include building materials, housing equipment, building management systems,
+                renovation technologies, AI/IoT solutions, real estate tech, construction DX, and decarbonization
+                technologies.
+
+                Professionals from development, design, construction, and operations attend to explore business
+                opportunities.
             </p>
         </section>
 
@@ -21,20 +24,24 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Misi -->
                 <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
-                    <h3 class="text-2xl font-bold text-blue-800 mb-3">Misi Kami</h3>
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">Our Mission</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Memberdayakan individu dan bisnis melalui teknologi yang mudah diakses, intuitif, dan andal,
-                        serta
-                        mendorong pertumbuhan dan kesuksesan bersama.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
                 <!-- Visi -->
                 <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
-                    <h3 class="text-2xl font-bold text-green-800 mb-3">Visi Kami</h3>
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">Our Vision</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        Menjadi pemimpin di industri teknologi dengan terus berinovasi dan menciptakan masa depan di
-                        mana
-                        teknologi memberikan dampak positif bagi kehidupan semua orang.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     </p>
                 </div>
             </div>
@@ -43,8 +50,8 @@
         <!-- Bagian Tim Kami -->
         <section class="mb-20">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Temui Tim Hebat Kami</h2>
-                <p class="text-gray-600 mt-2">Orang-orang di balik layar yang membuat semuanya terjadi.</p>
+                <h2 class="text-3xl font-bold text-gray-900">Meet Our Great Team</h2>
+                <p class="text-gray-600 mt-2">The people behind the scenes who make everything happen.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Anggota Tim 1 -->

@@ -7,7 +7,7 @@
         </div>
         <div class="flex justify-between items-center py-1 text-xs text-gray-600 border-b">
             <div>
-                <a href="#" class="hover:text-blue-700">RX Japan Ltd.</a>
+                <a href="https://www.rxjapan.jp/en" class="hover:text-blue-700">RX Japan Ltd.</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="#" class="hover:text-blue-700">Exhibition Hub</a>
@@ -51,7 +51,7 @@
                     </div>
 
                     <div
-                        class="origin-top-right absolute right-0 pt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden group-hover:block transition-all duration-300">
+                        class="origin-top-right absolute right-0 pt-2 w-56 rounded-md shadow-lg/10 bg-white focus:outline-none hidden group-hover:block transition-all duration-300">
                         <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
                             <!-- Tautan di dalam dropdown -->
                             <a href="{{ route('mediaPartners') }}"
@@ -78,7 +78,7 @@
                 <a href="{{ route('blog') }}" class="hover:text-blue-700">Blog</a>
             </div>
             <div class="flex items-center space-x-2">
-                <a href="{{ route('auth.register') }}"
+                <a href="{{ route('auth.exhibitionRegistration.show') }}"
                     class="bg-blue-600 text-white px-5 py-2.5 rounded-md font-semibold hover:bg-blue-700 transition duration-300 text-sm">
                     Exhibiting Info (Free)
                 </a>

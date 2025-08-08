@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class AuthController extends Controller
 {
@@ -43,9 +45,9 @@ class AuthController extends Controller
     /**
      * Menampilkan form register
      */
-    public function showRegisterForm()
+    public function showExhibitionRegistrationForm()
     {
-        return view('shared.auth.register');
+        return view('user.auth.register');
     }
 
     /**
