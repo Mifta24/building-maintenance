@@ -33,7 +33,6 @@
                 <a href="{{ route('exhibit') }}" class="hover:text-blue-700">Exhibit</a>
                 <a href="{{ route('visit') }}" class="hover:text-blue-700">Visit</a>
                 <!-- Komponen Dropdown -->
-                <!-- Komponen Dropdown -->
                 <div class="relative inline-block text-left group">
                     <!-- Tombol Pemicu Dropdown -->
                     <div>
@@ -64,14 +63,6 @@
                                 role="menuitem">
                                 Press Release and Blog
                             </a>
-
-                            {{-- <form method="POST" action="#" role="none">
-                                <button type="submit"
-                                    class="text-gray-700 block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
-                                    role="menuitem">
-                                    Contact Us
-                                </button>
-                            </form> --}}
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<x-layouts.app>
+<x-layouts.app title="JAPAN BUILD">
     <!-- Hero Section -->
     <main class="hero-bg bg-cover bg-center text-white">
         <div class="bg-black bg-opacity-50 min-h-[70vh] flex flex-col justify-center items-center text-center p-4">

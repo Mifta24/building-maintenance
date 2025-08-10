@@ -8,9 +8,7 @@
 
 
 <body>
-    <x-layouts.header />
     {{ $slot }}
-    <x-layouts.footer />
 </body>
 
 

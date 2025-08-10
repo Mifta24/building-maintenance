@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactFormMail;
+use App\Mail\ExhibitionRegistrationMail;
 
 class ExhibitionRegistrationController extends Controller
 {
@@ -33,7 +33,7 @@ class ExhibitionRegistrationController extends Controller
         // 2. Kirim email
         // Email akan dikirim ke alamat yang Anda tentukan di sini
         $recipientEmail = "yonandaputra05@gmail.com";
-        Mail::to($recipientEmail)->send(new ContactFormMail($validatedData));
+        Mail::to($recipientEmail)->send(new ExhibitionRegistrationMail($validatedData));
 
         // 3. Redirect kembali dengan pesan sukses
         return redirect()->route('auth.exhibitionRegistration.show')->with('success', 'Your request has been sent successfully');

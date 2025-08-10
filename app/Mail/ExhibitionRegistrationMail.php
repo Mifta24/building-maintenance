@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormMail extends Mailable
+class ExhibitionRegistrationMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class ContactFormMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'hello world',
+            subject: 'Exhibition Registration Mail',
         );
     }
 
@@ -41,7 +41,8 @@ class ContactFormMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'user.auth.exhibitionRegistration',
+            // Tentukan view Blade yang akan menjadi body email
+            view: 'user.emails.exhibition-registration-form',
         );
     }
 
