@@ -7,8 +7,10 @@
 <x-layouts.head title="{{ $title }}" />
 
 
-<body>
-    {{ $slot }}
+<body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+        {{ $slot }}
+    </main>
 </body>
 
 

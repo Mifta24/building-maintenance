@@ -6,8 +6,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <x-layouts.head title="{{ $title }}" />
 
-<body class='container'>
-    {{ $slot }}
+<body class="flex flex-col min-h-screen">
+    <main class="flex-grow">
+        {{ $slot }}
+    </main>
 </body>
 
 

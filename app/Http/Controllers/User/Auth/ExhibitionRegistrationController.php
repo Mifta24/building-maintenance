@@ -36,6 +36,6 @@ class ExhibitionRegistrationController extends Controller
         Mail::to($recipientEmail)->send(new ExhibitionRegistrationMail($validatedData));
 
         // 3. Redirect kembali dengan pesan sukses
-        return redirect()->route('auth.exhibitionRegistration.show')->with('success', 'Your request has been sent successfully');
+        return redirect()->route('auth.exhibitionRegistrationMailConfirm')->with('success', 'Your request has been sent successfully.');
     }
 }
