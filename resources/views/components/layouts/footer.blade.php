@@ -1,58 +1,44 @@
-<footer class="bg-blue-900 text-white">
-    <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<footer class="bg-[#212121] text-white font-sans">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+
+            <div class="md:col-span-2 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold">
+                        KS Equipment Co., Ltd.
+                    </h2>
+                </div>
+                <div class="mt-8 md:mt-0">
+                    <p class="text-sm text-gray-400">
+                        © 2025 KS Equipment Co., Ltd. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+
             <div>
-                <h3 class="font-bold text-lg mb-4">JAPAN BUILD</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-blue-200 hover:text-white">Aug. 27 (Wed) - 29 (Fri), 2025
-                            [Osaka]</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">10:00-17:00</a></li>
+                <h3 class="text-lg font-bold mb-4">
+                    Quick Links
+                </h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Partner</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">About</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Blog</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Contacts</a></li>
                 </ul>
             </div>
+
             <div>
-                <h3 class="font-bold text-lg mb-4">Contact</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="mailto:build-e.jp@rxglobal.com"
-                            class="text-blue-200 hover:text-white">build-e.jp@rxglobal.com</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">+81-3-6739-4127</a></li>
+                <h3 class="text-lg font-bold mb-4">
+                    Stay in Touch
+                </h3>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Facebook</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Instagram</a></li>
+                    <li><a href="#" class="hover:text-gray-300 hover:underline">Youtube</a></li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-bold text-lg mb-4">Policy</h3>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="text-blue-200 hover:text-white">Terms &
-                            Conditions</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Privacy
-                            Policy</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Your
-                            Privacy
-                            Choices</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Participation
-                            Policy</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Cookie
-                            Policy</a></li>
-                    <li><a href="#" class="text-blue-200 hover:text-white">Cookie
-                            Settings</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-bold text-lg mb-4">Follow Us</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>
-                        <a href="https://www.linkedin.com/company/japanbuild/"
-                            class="text-blue-200 hover:text-white">LinkedIn</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-blue-200 hover:text-white">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#" class="text-blue-200 hover:text-white">Instagram</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-12 border-t border-blue-800 pt-6 text-center text-sm text-blue-300">
-            <p>&copy; 2025 RX Japan Ltd. All Rights Reserved.</p>
+
         </div>
     </div>
 </footer>

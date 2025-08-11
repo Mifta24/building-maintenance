@@ -7,11 +7,12 @@
 <x-layouts.head title="{{ $title }}" />
 
 
-<body class="flex flex-col min-h-screen">
-    <x-layouts.header />
-        <main class="flex-grow">
-            {{ $slot }}
-        </main>
+<body class="bg-background-light text-text-dark font-sans antialiased">
+    {{-- <x-layouts.header /> --}}
+    {{-- header on landing page --}}
+    <main class="flex-grow">
+        {{ $slot }}
+    </main>
     <x-layouts.footer />
 </body>
 
