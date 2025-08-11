@@ -30,7 +30,7 @@
             </div>
         </section>
 
-        <section id="section-partners" class="py-[50px] bg-background-light relative overflow-hidden">
+        {{-- <section id="section-partners" class="py-[50px] bg-background-light relative overflow-hidden">
             <div class="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-background-light to-transparent z-10">
             </div>
             <div class="container text-center">
@@ -49,6 +49,59 @@
                 </div>
             </div>
             <div class="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-background-light to-transparent z-10">
+            </div>
+        </section> --}}
+
+        {{-- <section id="section-partners" class="py-12 bg-white">
+            <div class="container mx-auto text-center px-4">
+
+                <h3 class="text-lg font-semibold text-gray-600">
+                    Partnering with :
+                </h3>
+
+                <div class="mt-8 flex justify-center items-center flex-nowrap gap-x-12 md:gap-x-16">
+
+                    <img src="{{ asset('images/landing/8_3.svg') }}" alt="Partner logo 1"
+                        class="h-10 object-contain opacity-30">
+
+                    <img src="{{ asset('images/landing/8_18.svg') }}" alt="Partner logo 2" class="h-10 object-contain">
+
+                    <img src="{{ asset('images/landing/8_33.svg') }}" alt="Partner logo 3" class="h-10 object-contain">
+
+                    <img src="{{ asset('images/landing/8_50.svg') }}" alt="Partner logo 4" class="h-10 object-contain">
+
+                    <img src="{{ asset('images/landing/8_61.svg') }}" alt="Partner logo 5"
+                        class="h-10 object-contain opacity-30">
+
+                </div>
+            </div>
+        </section> --}}
+
+        <section id="section-partners" class="py-12 bg-white">
+            <div class="container mx-auto text-center px-4">
+                <h3 class="text-lg font-semibold text-gray-600">
+                    Partnering with :
+                </h3>
+
+                <div
+                    class="mt-8 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+
+                    <ul
+                        class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll-right">
+                        <li><img src="{{ asset('images/landing/8_3.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_18.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_33.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_50.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_61.svg') }}" class="h-10 object-contain"></li>
+
+                        <li><img src="{{ asset('images/landing/8_3.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_18.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_33.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_50.svg') }}" class="h-10 object-contain"></li>
+                        <li><img src="{{ asset('images/landing/8_61.svg') }}" class="h-10 object-contain"></li>
+                    </ul>
+
+                </div>
             </div>
         </section>
 
@@ -91,24 +144,21 @@
         <section id="section-features" class="py-24">
             <div class="container flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20">
                 <div class="flex-[2] grid grid-cols-1 md:grid-cols-2 gap-[35px] w-full">
-                    <div
-                        class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-custom p-4 flex flex-col gap-2">
+                    <div class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-md p-4 flex flex-col gap-2">
                         <img src="{{ asset('images/landing/96_22.svg') }}" alt="Gear icon" class="w-[40px] h-[36px]">
                         <h3 class="text-2xl font-semibold text-primary leading-tight">Comprehensive Maintenance
                             Solutions</h3>
                         <p class="text-sm text-[#929498] leading-tight">From daily operations to advanced technical
                             services.</p>
                     </div>
-                    <div
-                        class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-custom p-4 flex flex-col gap-2">
+                    <div class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-md p-4 flex flex-col gap-2">
                         <img src="{{ asset('images/landing/96_131.svg') }}" alt="Achievement icon"
                             class="w-[40px] h-[36px]">
                         <h3 class="text-2xl font-semibold text-primary leading-tight">Proven Expertise</h3>
                         <p class="text-sm text-[#929498] leading-tight">Backed by rare, highly specialized
                             qualifications.</p>
                     </div>
-                    <div
-                        class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-custom p-4 flex flex-col gap-2">
+                    <div class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-md p-4 flex flex-col gap-2">
                         <img src="{{ asset('images/landing/96_136.svg') }}" alt="Safety helmet icon"
                             class="w-[40px] h-[36px]">
                         <h3 class="text-2xl font-semibold text-primary leading-tight">Reliable Safety and Compliance
@@ -116,8 +166,7 @@
                         <p class="text-sm text-[#929498] leading-tight">Ensuring every building meets the highest
                             industry standards.</p>
                     </div>
-                    <div
-                        class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-custom p-4 flex flex-col gap-2">
+                    <div class="bg-[#f6f6f7] border border-[#c2c5ca] rounded-[14px] shadow-md p-4 flex flex-col gap-2">
                         <img src="{{ asset('images/landing/96_141.svg') }}" alt="Handshake icon"
                             class="w-[40px] h-[36px]">
                         <h3 class="text-2xl font-semibold text-primary leading-tight">Peace of Mind</h3>
