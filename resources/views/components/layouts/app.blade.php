@@ -6,14 +6,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <x-layouts.head title="{{ $title }}" />
 
+<body class="antialiased">
+    <x-layouts.header></x-layouts.header>
 
-<body class="bg-background-light text-text-dark font-sans antialiased">
-    {{-- <x-layouts.header /> --}}
-    {{-- header on landing page --}}
     <main class="flex-grow">
         {{ $slot }}
     </main>
-    <x-layouts.footer />
+
+    <x-layouts.footer></x-layouts.footer>
+    {{-- @vite('resources/js/app.js') --}}
+
+    @stack('scripts')
 </body>
 
 
