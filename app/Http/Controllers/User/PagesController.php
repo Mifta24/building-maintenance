@@ -27,13 +27,23 @@ class PagesController extends Controller
         return view('user.visit');
     }
 
-    public function mediaPartners()
+    public function partners()
     {
-        return view('user.media-partners');
+        return view('user.partners');
     }
 
     public function blog()
     {
         return view('user.blog');
+    }
+
+    public function contact()
+    {
+        return view('user.contact');
+    }
+
+    public function services()
+    {
+        return view('user.services');
     }
 }

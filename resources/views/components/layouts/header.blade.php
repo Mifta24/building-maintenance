@@ -1,23 +1,21 @@
 <header class="w-full fixed top-0 z-50 md:pt-6 transition-all duration-300">
     <div
-        class="
-        bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative
-        
-        w-full py-4 px-6
-
-        md:max-w-5xl md:mx-auto md:rounded-full md:py-3 md:px-8
-    ">
+        class="bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative w-full py-4 px-6 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl md:mx-auto md:rounded-full md:py-3 md:px-8">
         <div>
-            <a href="#" class="text-xl font-bold text-gray-800">KS Equipment Co., Ltd</a>
+            <a href="{{ route('landing') }}" class="text-xl font-bold text-gray-800">KS設備株式会社</a>
         </div>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="#" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">Home</a>
-            <a href="#" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">Partner</a>
-            <a href="#" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">About</a>
-            <a href="#" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">Blog</a>
-            <a href="#" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">Contacts</a>
+            <a href="{{ route('landing') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ホーム</a>
+            <a href="{{ route('partners') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">パートナー
+            </a>
+            <a href="{{ route('about') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">会社概要
+            </a>
+            <a href="{{ route('blog') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ブログ
+            </a>
+            <a href="{{ route('contact') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">お問い合わせ</a>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -36,18 +34,18 @@
     </div>
 
     <div id="mobile-menu" class="md:hidden hidden mt-4 max-w-5xl mx-auto px-4">
-        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg py-4 px-6">
+        <div class="bg-white/95 text-center backdrop-blur-sm rounded-2xl shadow-lg py-4 px-6">
             <nav class="flex flex-col space-y-4">
-                <a href="#"
-                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">Home</a>
-                <a href="#"
-                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">Partner</a>
-                <a href="#"
-                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">About</a>
-                <a href="#"
-                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">Blog</a>
-                <a href="#"
-                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2">Contacts</a>
+                <a href="{{ route('landing') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ホーム</a>
+                <a href="{{ route('partners') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">パートナー</a>
+                <a href="{{ route('about') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">会社概要</a>
+                <a href="{{ route('blog') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ブログ</a>
+                <a href="{{ route('contact') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2">お問い合わせ</a>
             </nav>
         </div>
     </div>
@@ -55,13 +53,13 @@
 
 @push('scripts')
     <script>
-        // Script ini HANYA akan dimuat jika komponen header ini digunakan
+        // This script will ONLY be loaded if this header component is used
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const hamburgerIcon = document.getElementById('hamburger-icon');
         const closeIcon = document.getElementById('close-icon');
 
-        // Pastikan tombol ada sebelum menambahkan event listener
+        // Make sure the button exists before adding the event listener
         if (mobileMenuButton) {
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');

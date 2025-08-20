@@ -1,165 +1,85 @@
 <x-layouts.app>
-    <!-- Konten Utama -->
-    <main class="container mx-auto px-4 py-16">
-
-        <!-- Judul Halaman -->
-        <section class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900">Rilis Pers & Blog</h1>
-            <p class="text-gray-600 mt-3 max-w-2xl mx-auto">Berita terbaru, pembaruan acara, dan wawasan industri dari
-                kami.
+    <!-- Hero Section -->
+    <section id="section-blog-hero" class="relative text-text-light pt-24 pb-12 md:pt-32 md:pb-16">
+        <div class="absolute inset-0 -z-10">
+            <img src="{{ asset('images/landing/8e49a35a6b4daf521c4fbae8eee9ec3c6dc4b5e8.png') }}" alt="background"
+                class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#1d1616] opacity-60"></div>
+        </div>
+        <div class="container mx-auto px-4 text-white text-center">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mt-10 md:mt-16">
+                当社ブログ
+            </h1>
+            <p class="text-lg md:text-xl lg:text-2xl mt-4 max-w-3xl mx-auto">
+                KS
+                Equipmentチームによる最新ニュース、プロジェクト紹介、専門的な見解をお届けします。
             </p>
-        </section>
+        </div>
+    </section>
 
-        <!-- Wrapper Layout Utama (Konten + Sidebar) -->
-        <div class="flex flex-col lg:flex-row gap-12">
+    <!-- Blog Posts Section -->
+    <section id="section-blog-posts" class="bg-gray-50 py-16 md:py-20 lg:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003355] mb-12 text-center">
+                最新の記事
+            </h2>
 
-            <!-- Kolom Konten Utama (Kiri) -->
-            <div class="w-full lg:w-2/3">
-                <div class="space-y-8">
-
-                    <!-- Kartu Artikel 1 -->
-                    <article
-                        class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row group transition-shadow duration-300 hover:shadow-xl">
-                        <a href="#" class="block md:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=Berita+1"
-                                alt="Gambar artikel berita" class="w-full h-48 md:h-full object-cover">
-                        </a>
-                        <div class="p-6 flex flex-col justify-center">
-                            <p class="text-sm text-gray-500 mb-2">7 Agustus 2025</p>
-                            <span
-                                class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full mb-3 self-start">Rilis
-                                Pers</span>
-                            <h3
-                                class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                                <a href="#">Pengumuman Pameran Teknologi Terbesar Tahun Ini</a>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed text-sm">
-                                Kami dengan bangga mengumumkan penyelenggaraan acara tahunan kami yang akan menampilkan
-                                lebih dari 500 peserta pameran...
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Kartu Artikel 2 -->
-                    <article
-                        class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row group transition-shadow duration-300 hover:shadow-xl">
-                        <a href="#" class="block md:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Blog" alt="Gambar artikel blog"
-                                class="w-full h-48 md:h-full object-cover">
-                        </a>
-                        <div class="p-6 flex flex-col justify-center">
-                            <p class="text-sm text-gray-500 mb-2">5 Agustus 2025</p>
-                            <span
-                                class="inline-block bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full mb-3 self-start">Blog</span>
-                            <h3
-                                class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                                <a href="#">5 Tren Industri Konstruksi yang Perlu Anda Ketahui</a>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed text-sm">
-                                Industri konstruksi terus berkembang. Simak lima tren utama yang akan membentuk masa
-                                depan
-                                industri ini...
-                            </p>
-                        </div>
-                    </article>
-
-                    <!-- Kartu Artikel 3 -->
-                    <article
-                        class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row group transition-shadow duration-300 hover:shadow-xl">
-                        <a href="#" class="block md:w-1/3 flex-shrink-0">
-                            <img src="https://placehold.co/600x400/F59E0B/FFFFFF?text=Berita+2"
-                                alt="Gambar artikel berita" class="w-full h-48 md:h-full object-cover">
-                        </a>
-                        <div class="p-6 flex flex-col justify-center">
-                            <p class="text-sm text-gray-500 mb-2">2 Agustus 2025</p>
-                            <span
-                                class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full mb-3 self-start">Rilis
-                                Pers</span>
-                            <h3
-                                class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors duration-300">
-                                <a href="#">Kemitraan Strategis untuk Mendorong Inovasi Digital</a>
-                            </h3>
-                            <p class="text-gray-600 leading-relaxed text-sm">
-                                Sebuah langkah maju yang signifikan telah diambil melalui kemitraan baru kami dengan
-                                pemimpin teknologi global...
-                            </p>
-                        </div>
-                    </article>
-
-                </div>
-
-                <!-- Navigasi Halaman (Pagination) -->
-                <nav class="mt-16 flex justify-center items-center space-x-1 md:space-x-2">
-                    <a href="#"
-                        class="px-3 py-2 text-gray-500 bg-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm">&laquo;</a>
-                    <a href="#" class="px-4 py-2 text-white bg-blue-600 rounded-md shadow-sm">1</a>
-                    <a href="#"
-                        class="px-4 py-2 text-gray-700 bg-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm">2</a>
-                    <a href="#"
-                        class="px-4 py-2 text-gray-700 bg-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm">3</a>
-                    <span class="px-4 py-2 text-gray-500">...</span>
-                    <a href="#"
-                        class="px-4 py-2 text-gray-700 bg-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm">10</a>
-                    <a href="#"
-                        class="px-3 py-2 text-gray-500 bg-white rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200 shadow-sm">&raquo;</a>
-                </nav>
-            </div>
-
-            <!-- Kolom Sidebar (Kanan) -->
-            <aside class="w-full lg:w-1/3 space-y-8">
-
-                <!-- Widget Pencarian -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold text-lg mb-4 border-b border-gray-200 pb-3">Cari Artikel</h3>
-                    <div class="relative">
-                        <input type="text" placeholder="Kata kunci..."
-                            class="w-full border border-gray-300 rounded-md py-2 pl-4 pr-10 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-blue-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </button>
+            <!-- Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article Card 1 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="images/a23a7c8f4629d3ef4f88b65e5955e4dcd49cae10.png" alt="Construction site tools"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-2">2025年8月4日</p>
+                        <h3 class="text-xl font-bold text-[#003858] mb-3 flex-grow">
+                            ZEBとは何ですか？カーボンニュートラル建築の未来を築く
+                        </h3>
+                        <p class="text-gray-700 mb-4">
+                            ZEBの紹介とその建物運営への影響を減少させる方法について
+                        </p>
+                        <a href="#" class="font-semibold text-[#005f99] hover:text-[#003858] mt-auto">続きを読む
+                            &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Widget Kategori -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold text-lg mb-4 border-b border-gray-200 pb-3">Kategori</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>Semua</span>
-                                <span class="text-xs text-gray-400">&gt;</span></a></li>
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>Rilis
-                                    Pers</span> <span class="text-xs text-gray-400">&gt;</span></a></li>
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>Blog</span>
-                                <span class="text-xs text-gray-400">&gt;</span></a></li>
-                    </ul>
+                <!-- Article Card 2 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="images/2b58a85011cdbe4307553093dceedea9b8253b80.png" alt="Building exterior"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-2">2025年7月24日</p>
+                        <h3 class="text-xl font-bold text-[#003858] mb-3 flex-grow">
+                            スマートメンテナンスによるライフサイクルコストの削減
+                        </h3>
+                        <p class="text-gray-700 mb-4">
+                            定期的で効率的なメンテナンスが建物の運営における長期的なコスト削減にどのように寄与するかを学びましょう。
+                        </p>
+                        <a href="#" class="font-semibold text-[#005f99] hover:text-[#003858] mt-auto">続きを読む
+                            &rarr;</a>
+                    </div>
                 </div>
 
-                <!-- Widget Arsip -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="font-bold text-lg mb-4 border-b border-gray-200 pb-3">Arsip</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>2025</span>
-                                <span class="text-xs text-gray-400">&gt;</span></a></li>
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>2024</span>
-                                <span class="text-xs text-gray-400">&gt;</span></a></li>
-                        <li><a href="#"
-                                class="flex justify-between items-center text-gray-600 hover:text-blue-600 font-medium transition-colors duration-200"><span>2023</span>
-                                <span class="text-xs text-gray-400">&gt;</span></a></li>
-                    </ul>
+                <!-- Article Card 3 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-2 transition-transform duration-300">
+                    <img src="images/e7471a33f8fa940358b48fff2c6beb1d976536a4.png" alt="Abstract design"
+                        class="w-full h-48 object-cover" />
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-sm text-gray-500 mb-2">July 10, 2025</p>
+                        <h3 class="text-xl font-bold text-[#003858] mb-3 flex-grow">
+                            舞台裏: KS設備が社内サービスをどのように運営しているか
+                        </h3>
+                        <p class="text-gray-700 mb-4">
+                            社内サービスモデルの利点と、私たちの安全と品質へのコミットメントを発見してください。
+                        </p>
+                        <a href="#" class="font-semibold text-[#005f99] hover:text-[#003858] mt-auto">続きを読む
+                            &rarr;</a>
+                    </div>
                 </div>
-
-            </aside>
+            </div>
         </div>
-
-    </main>
-
+    </section>
 </x-layouts.app>
