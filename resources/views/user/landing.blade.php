@@ -339,9 +339,8 @@
                 {{-- Card --}}
                 <x-cards.blog-card
                     imageUrl="{{ asset('images/landing/a23a7c8f4629d3ef4f88b65e5955e4dcd49cae10.png') }}"
-                    title="ZEBとは何か？ カーボンニュートラル建築の未来を築く"
-                    descriptionOverview="ZEBの紹介と、それが建物の運営をどのように再構築し、環境への影響を減少させるかについて。"
-                    date="2025年8月4日"></x-cards.blog-card>
+                    headline="ZEBとは何か？ カーボンニュートラル建築の未来を築く" lead="ZEBの紹介と、それが建物の運営をどのように再構築し、環境への影響を減少させるかについて。"
+                    timestamp="2025年8月4日"></x-cards.blog-card>
             </div>
 
             <div class="mt-16 text-center">
