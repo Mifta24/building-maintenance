@@ -81,66 +81,23 @@
                 </p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581092916376-2222c6742126?q=80&w=1920&auto=format&fit=crop"
-                        alt="Electric maintenance" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">電気設備保守</h3>
-                        <p class="text-gray-600">
-                            受変電設備から照明器具まで、電力の安定供給と安全を確保するための点検・保守を行います。
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1621569420379-a5b7c12c5f95?q=80&w=1920&auto=format&fit=crop"
-                        alt="HVAC maintenance" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">空調設備点検</h3>
-                        <p class="text-gray-600">
-                            快適な室内環境を維持するため、業務用エアコンや換気システムの定期的な性能チェックと清掃を実施します。
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1542601906-8b23c21846b7?q=80&w=1920&auto=format&fit=crop"
-                        alt="Fire safety" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">消防設備点検</h3>
-                        <p class="text-gray-600">
-                            消火器、火災報知器、スプリンクラーなどの消防用設備が正常に作動するかを法に基づき点検します。
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1581833543689-05b1c5a93583?q=80&w=1920&auto=format&fit=crop"
-                        alt="Plumbing" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">給排水衛生設備管理</h3>
-                        <p class="text-gray-600">
-                            貯水槽の清掃や水質検査、ポンプの点検などを行い、安全で衛生的な水の供給を維持します。
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1920&auto=format&fit=crop"
-                        alt="Building diagnostics" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">建物全体診断</h3>
-                        <p class="text-gray-600">
-                            専門家が建物の構造、外壁、防水などを総合的に診断し、長期的な修繕計画の策定をサポートします。
-                        </p>
-                    </div>
-                </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1558692070-2dd6ceb7a3a9?q=80&w=1920&auto=format&fit=crop"
-                        alt="Energy saving" class="w-full h-48 object-cover" />
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">省エネルギー提案</h3>
-                        <p class="text-gray-600">
-                            エネルギー消費量を分析し、LED化や高効率空調への更新など、コスト削減に繋がるご提案をします。
-                        </p>
-                    </div>
-                </div>
+                <x-service-card imageUrl="https://i.pinimg.com/1200x/1a/c9/ee/1ac9ee1ba597e2a8991a51b72e1e5d2e.jpg"
+                    title="電気設備保守" description="受変電設備から照明器具まで、電力の安定供給と安全を確保するための点検・保守を行います。"></x-service-card>
+
+                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
+                    title="空調設備点検" description="快適な室内環境を維持するため、業務用エアコンや換気システムの定期的な性能チェックと清掃を実施します。"></x-service-card>
+
+                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
+                    title="消防設備点検" description="消火器、火災報知器、スプリンクラーなどの消防用設備が正常に作動するかを法に基づき点検します。"></x-service-card>
+
+                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
+                    title="給排水衛生設備管理" description="貯水槽の清掃や水質検査、ポンプの点検などを行い、安全で衛生的な水の供給を維持します。"></x-service-card>
+
+                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
+                    title="建物全体診断" description="専門家が建物の構造、外壁、防水などを総合的に診断し、長期的な修繕計画の策定をサポートします。"></x-service-card>
+
+                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
+                    title="省エネルギー提案" description="エネルギー消費量を分析し、LED化や高効率空調への更新など、コスト削減に繋がるご提案をします。"></x-service-card>
             </div>
         </div>
     </section>

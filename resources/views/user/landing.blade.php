@@ -217,130 +217,27 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{-- <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover"
-                        src="{{ asset('images/landing/a23a7c8f4629d3ef4f88b65e5955e4dcd49cae10.png') }}"
-                        alt="Modern building architecture" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            ZEBとは何か？ カーボンニュートラル建築の未来を築く
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            ZEBの紹介と、それが建物の運営をどのように再構築し、環境への影響を減少させるかについて。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="article-zeb.html"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年8月4日</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover"
-                        src="{{ asset('images/landing/2b58a85011cdbe4307553093dceedea9b8253b80.png') }}"
-                        alt="Worker performing maintenance" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            スマートメンテナンスで実現するライフサイクルコスト削減
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            定期的で効率的なメンテナンスが建物運用における長期的なコスト削減にどのように貢献するかを学びましょう。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="#"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年7月24日</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover"
-                        src="{{ asset('images/landing/e7471a33f8fa940358b48fff2c6beb1d976536a4.png') }}"
-                        alt="Team meeting from a top-down view" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            裏側を公開：KS Equipmentの自社サービス運営方法
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            社内サービスモデルの利点と、私たちの安全と品質へのコミットメントを発見してください。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="#"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年7月10日</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover"
-                        src="{{ asset('images/landing/0b2b92daccd073fa7ad0ce9fb7e8fc34ec324d60.png') }}"
-                        alt="HVAC System diagram" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            LCC（ライフサイクルコスト）の理解：長期コスト効率を見据えた設計
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            ライフサイクルコストについて考察し、戦略的なデザイン選択が保守および運用コストを削減できる方法を探ります。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="#"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年6月28日</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover" src="images/381744dc46422f391d0c922a556eddb10fa1bd9a.png"
-                        alt="Construction worker inspecting a site" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            日本の法定点検とは？ビルオーナーが知るべきこと
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            私たちは、必須の検査要件と、KS機器がどのように法的なコンプライアンスを完全に確保しているかを分解します。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="#"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年6月10日</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article
-                    class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-                    <img class="w-full h-48 object-cover" src="images/57918c7c238ece855591a13c827f50cdbfaa23fa.png"
-                        alt="Engineer monitoring equipment" />
-                    <div class="p-6 flex flex-col flex-grow">
-                        <h3 class="text-lg font-bold text-gray-900 mb-2">
-                            手動からスマートへ：ビル機器モニタリングの進化
-                        </h3>
-                        <p class="text-gray-600 text-sm flex-grow mb-4">
-                            センサー 기반
-                            モニタリングへのシフトとその建物の安全性およびエネルギー使用への影響を探る。
-                        </p>
-                        <div class="mt-auto flex justify-between items-center">
-                            <a href="#"
-                                class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-                            <span class="text-sm text-gray-500">2025年5月25日 </span>
-                        </div>
-                    </div>
-                </article> --}}
-
                 {{-- Card --}}
-                <x-cards.blog-card
-                    imageUrl="{{ asset('images/landing/a23a7c8f4629d3ef4f88b65e5955e4dcd49cae10.png') }}"
+                <x-blog-card imageUrl="{{ asset('images/landing/a23a7c8f4629d3ef4f88b65e5955e4dcd49cae10.png') }}"
                     headline="ZEBとは何か？ カーボンニュートラル建築の未来を築く" lead="ZEBの紹介と、それが建物の運営をどのように再構築し、環境への影響を減少させるかについて。"
-                    timestamp="2025年8月4日"></x-cards.blog-card>
+                    timestamp="2025年8月4日"></x-blog-card>
+                <x-blog-card imageUrl="{{ asset('images/landing/2b58a85011cdbe4307553093dceedea9b8253b80.png') }}"
+                    headline="スマートメンテナンスで実現するライフサイクルコスト削減" lead="定期的で効率的なメンテナンスが建物運用における長期的なコスト削減にどのように貢献するかを学びましょう。"
+                    timestamp="2025年7月24日"></x-blog-card>
+                <x-blog-card imageUrl="{{ asset('images/landing/e7471a33f8fa940358b48fff2c6beb1d976536a4.png') }}"
+                    headline="裏側を公開：KS Equipmentの自社サービス運営方法" lead="社内サービスモデルの利点と、私たちの安全と品質へのコミットメントを発見してください。"
+                    timestamp="2025年7月10日"></x-blog-card>
+                <x-blog-card imageUrl="{{ asset('images/landing/0b2b92daccd073fa7ad0ce9fb7e8fc34ec324d60.png') }}"
+                    headline="LCC（ライフサイクルコスト）の理解：長期コスト効率を見据えた設計"
+                    lead="ライフサイクルコストについて考察し、戦略的なデザイン選択が保守および運用コストを削減できる方法を探ります。" timestamp="2025年6月28日"></x-blog-card>
+                <x-blog-card imageUrl="{{ asset('images/landing/381744dc46422f391d0c922a556eddb10fa1bd9a.png') }}"
+                    headline="日本の法定点検とは？ビルオーナーが知るべきこと" lead="私たちは、必須の検査要件と、KS機器がどのように法的なコンプライアンスを完全に確保しているかを分解します。"
+                    timestamp="2025年6月10日"></x-blog-card>
+                <x-blog-card imageUrl="{{ asset('images/landing/57918c7c238ece855591a13c827f50cdbfaa23fa.png') }}"
+                    headline="手動からスマートへ：ビル機器モニタリングの進化"
+                    lead="センサー 기반
+                            モニタリングへのシフトとその建物の安全性およびエネルギー使用への影響を探る。"
+                    timestamp="2025年5月25日"></x-blog-card>
             </div>
 
             <div class="mt-16 text-center">
