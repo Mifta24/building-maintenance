@@ -30,6 +30,10 @@
                     <x-blog-card :article="$article" />
                 @endforeach
             </div>
+
+            <div class="mt-16">
+                {{ $articles->links() }}
+            </div>
         </div>
     </section>
 </x-layouts.app>

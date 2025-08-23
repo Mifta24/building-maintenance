@@ -37,7 +37,10 @@ class PagesController extends Controller
 
     public function blog()
     {
-        $articles = Article::latest()->take(12)->get();
+        $articles = Article::latest()->paginate(6);
+
+        // langsung pindah ke section tertentu
+        $articles->fragment('section-blog-posts');
 
         return view('user.blog', compact('articles'));
     }

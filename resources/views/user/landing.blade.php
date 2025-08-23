@@ -218,18 +218,13 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {{-- Card --}}
-                {{-- @foreach ($articles as $article)
-                    <x-blog-card image="{{ asset('images/article/' . $article->image) }}"
-                        headline="{{ $article->headline }}" lead="{{ $article->lead }}"
-                        timestamp="{{ $article->created_at->format('Y年n月j日') }}" />
-                @endforeach --}}
                 @foreach ($articles as $article)
                     <x-blog-card :article="$article" />
                 @endforeach
             </div>
 
             <div class="mt-16 text-center">
-                <a href="{{ route('blog') }}"
+                <a href="{{ route('blog') }}#section-blog-posts"
                     class="bg-gray-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors text-base">
                     すべての記事を見る
                 </a>
