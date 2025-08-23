@@ -14,4 +14,8 @@
             </div>
         </div>
     </div>
+
+    <a href="{{ route('article.index') }}">
+        Add Article
+    </a>
 </x-app-layout>

@@ -8,7 +8,7 @@
         </div>
         <div class="container mx-auto px-4 text-white text-center">
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mt-10 md:mt-16">
-                当社の強みとサービス内容
+                詳細はこちら
             </h1>
             <p class="text-lg md:text-xl lg:text-2xl mt-4 max-w-3xl mx-auto">
                 比類なき専門性と、日本でも数少ない特殊資格で、お客様の資産価値を守ります。

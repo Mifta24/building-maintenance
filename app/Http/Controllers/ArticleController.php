@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ArticleController extends Controller
 {
@@ -30,13 +31,24 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'imageUrl' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'headline' => 'required|string|max:255',
             'lead' => 'required|string|max:255',
-            'body' => 'required|text',
+            'body' => 'required|string',
         ]);
 
-        Article::create($request->all());
+        $input = $request->all();
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            // Membuat nama file unik (timestamp + nama asli)
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            // Pindahkan file ke folder public/images/produk
+            $file->move(public_path('images/article'), $imageName);
+            $input['image'] = $imageName;
+        }
+
+        Article::create($input);
 
         return redirect()->route('article.index')->with('success', 'Article successfully added');
     }
@@ -44,9 +56,9 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Article $article)
     {
-        // return view('article.edit', compact('article'));
+        return view('article.show', compact('article'));
     }
 
     /**
@@ -63,13 +75,27 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'imageUrl' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'headline' => 'required|string|max:255',
             'lead' => 'required|string|max:255',
-            'body' => 'required|text',
+            'body' => 'required|string',
         ]);
 
-        $article->update($request->all());
+        $input = $request->all();
+
+        if ($request->hasFile('image')) {
+            // Hapus image lama jika ada
+            if ($article->image && File::exists(public_path('images/article/' . $article->image))) {
+                File::delete(public_path('images/article/' . $article->image));
+            }
+
+            $file = $request->file('image');
+            $imageName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/article'), $imageName);
+            $input['image'] = $imageName;
+        }
+
+        $article->update($input);
 
         return redirect()->route('article.index')
             ->with('success', 'the article has been successfully updated.');
@@ -80,9 +106,23 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
+        // 1. Cek apakah artikel memiliki gambar
+        if ($article->image) {
+            // 2. Tentukan path lengkap ke file gambar
+            $image_path = public_path('images/article/' . $article->image);
+
+            // 3. Cek apakah file benar-benar ada di server
+            if (File::exists($image_path)) {
+                // 4. Hapus file gambar dari folder public
+                File::delete($image_path);
+            }
+        }
+
+        // 5. Setelah file dihapus, hapus data artikel dari database
         $article->delete();
 
-        return redirect()->route('produk.index')
-            ->with('success', 'The article has been successfully deleted.');
+        // 6. Redirect kembali dengan pesan sukses
+        return redirect()->route('article.index')
+            ->with('success', 'Artikel beserta gambarnya berhasil dihapus.');
     }
 }

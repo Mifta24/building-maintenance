@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = [
-        'imageUrl',
+        'image',
         'headline',
         'lead',
         'body',

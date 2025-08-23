@@ -4,12 +4,19 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class PagesController extends Controller
 {
     public function landing()
     {
-        return view('user.landing');
+        // Ambil 6 artikel terbaru dari database
+        $articles = Article::latest()->take(6)->get();
+
+        // Kirim data articles ke view 'welcome'
+        return view('user.landing', [
+            'articles' => $articles
+        ]);
     }
 
     public function about()

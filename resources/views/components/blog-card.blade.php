@@ -1,25 +1,52 @@
-@props([
-    'imageUrl' => ' ',
-    'headline' => ' ',
-    'lead' => ' ',
-    'route' => ' ',
-    'timestamp' => ' ',
-])
+@props(['article'])
 
 <article
     class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
-    <img class="w-full h-48 object-cover" src="{{ $imageUrl }}" alt="Blog Image" />
+    @if ($article->image)
+        <img src="{{ asset('images/article/' . $article->image) }}" alt="{{ $article->headline }}"
+            class="w-full h-48 object-cover">
+    @else
+        <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+            <span class="text-gray-500">Tidak ada gambar</span>
+        </div>
+    @endif
     <div class="p-6 flex flex-col flex-grow">
         <h3 class="text-lg font-bold text-gray-900 mb-2">
-            {{ $headline }}
+            {{ $article->headline }}
         </h3>
         <p class="text-gray-600 text-sm flex-grow mb-4">
-            {{ $lead }}
+            {{ $article->lead }}
         </p>
         <div class="mt-auto flex justify-between items-center">
-            <a href="{{ $route }}"
+            <a href="{{ route('articles.show', $article) }}"
                 class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
-            <span class="text-sm text-gray-500">{{ $timestamp }}</span>
+            <span class="text-sm text-gray-500">{{ $article->created_at->format('Y年n月j日') }}</span>
         </div>
     </div>
 </article>
+
+{{-- 
+@props(['article'])
+
+<a href="{{ route('articles.show', $article) }}"
+    class="block bg-white rounded-lg shadow-lg overflow-hidden flex-col hover:shadow-xl transition-shadow duration-300">
+    <div>
+        @if ($article->image)
+            <img src="{{ asset('images/article/' . $article->image) }}" alt="{{ $article->headline }}"
+                class="w-full h-48 object-cover">
+        @else
+            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                <span class="text-gray-500">Tidak ada gambar</span>
+            </div>
+        @endif
+    </div>
+    <div class="p-6 flex flex-col flex-grow">
+        <h3 class="text-xl font-bold text-gray-800 mb-2">
+            {{ $article->headline }}
+        </h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">{{ $article->lead }}</p>
+        <div class="text-right text-xs text-gray-500">
+            {{ $article->created_at->format('Y年n月j日') }}
+        </div>
+    </div>
+</a> --}}
