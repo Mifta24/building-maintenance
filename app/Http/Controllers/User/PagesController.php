@@ -10,13 +10,9 @@ class PagesController extends Controller
 {
     public function landing()
     {
-        // Ambil 6 artikel terbaru dari database
         $articles = Article::latest()->take(6)->get();
 
-        // Kirim data articles ke view 'welcome'
-        return view('user.landing', [
-            'articles' => $articles
-        ]);
+        return view('user.landing', compact('articles'));
     }
 
     public function about()
@@ -41,7 +37,9 @@ class PagesController extends Controller
 
     public function blog()
     {
-        return view('user.blog');
+        $articles = Article::latest()->take(12)->get();
+
+        return view('user.blog', compact('articles'));
     }
 
     public function contact()

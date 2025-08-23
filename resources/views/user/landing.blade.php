@@ -229,7 +229,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="#"
+                <a href="{{ route('blog') }}"
                     class="bg-gray-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors text-base">
                     すべての記事を見る
                 </a>
