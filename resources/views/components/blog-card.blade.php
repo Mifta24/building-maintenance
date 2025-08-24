@@ -24,29 +24,3 @@
         </div>
     </div>
 </article>
-
-{{-- 
-@props(['article'])
-
-<a href="{{ route('articles.show', $article) }}"
-    class="block bg-white rounded-lg shadow-lg overflow-hidden flex-col hover:shadow-xl transition-shadow duration-300">
-    <div>
-        @if ($article->image)
-            <img src="{{ asset('images/article/' . $article->image) }}" alt="{{ $article->headline }}"
-                class="w-full h-48 object-cover">
-        @else
-            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
-                <span class="text-gray-500">Tidak ada gambar</span>
-            </div>
-        @endif
-    </div>
-    <div class="p-6 flex flex-col flex-grow">
-        <h3 class="text-xl font-bold text-gray-800 mb-2">
-            {{ $article->headline }}
-        </h3>
-        <p class="text-gray-600 text-sm mb-4 flex-grow">{{ $article->lead }}</p>
-        <div class="text-right text-xs text-gray-500">
-            {{ $article->created_at->format('Y年n月j日') }}
-        </div>
-    </div>
-</a> --}}

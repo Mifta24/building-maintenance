@@ -217,11 +217,15 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{-- Card --}}
-                @foreach ($articles as $article)
+                @forelse ($articles as $article)
                     <x-blog-card :article="$article" />
-                @endforeach
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-12">
+                        <p class="text-xl">現在表示できる記事はありません。</p>
+                    </div>
+                @endforelse
             </div>
+
 
             <div class="mt-16 text-center">
                 <a href="{{ route('blog') }}#section-blog-posts"

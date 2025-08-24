@@ -58,9 +58,8 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="body" class="form-label"><strong>Body:</strong></label>
-                                <textarea class="form-control @error('body') is-invalid @enderror" style="height:150px" name="body" id="body"
-                                    placeholder="Masukkan body article">{{ old('body', $article->body) }}</textarea>
+                                <label for="body" class="form-label"><strong>Article body:</strong></label>
+                                <x-forms.tinymce-editor />
 
                                 @error('body')
                                     <div class="invalid-feedback">

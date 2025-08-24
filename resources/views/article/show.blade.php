@@ -8,7 +8,7 @@
                 </h1>
 
                 <p class="text-gray-500 mb-8">
-                    Dipublikasikan pada {{ $article->created_at->format('d F Y') }}
+                    公開日 {{ $article->created_at->format('Y年n月j日') }}
                 </p>
 
                 @if ($article->image)
@@ -23,7 +23,7 @@
                 <div class="mt-12 text-center">
                     <a href="{{ route('landing') }}#section-blog"
                         class="inline-block bg-gray-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors text-base">
-                        &larr; Kembali ke Semua Artikel
+                        &larr; 戻る
                     </a>
                 </div>
             </article>

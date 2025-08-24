@@ -26,14 +26,23 @@
 
             <!-- Articles Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                @foreach ($articles as $article)
+                @forelse ($articles as $article)
+                    {{-- Kode ini berjalan jika ada artikel --}}
                     <x-blog-card :article="$article" />
-                @endforeach
+                @empty
+                    {{-- Kode ini berjalan jika $articles kosong --}}
+                    <div class="col-span-full text-center text-gray-500 py-12">
+                        <p class="text-xl">現在表示できる記事はありません。</p>
+                    </div>
+                @endforelse
             </div>
 
-            <div class="mt-16">
-                {{ $articles->links() }}
-            </div>
+            {{-- Opsional: Sembunyikan juga link paginasi jika tidak ada artikel --}}
+            @if ($articles->hasPages())
+                <div class="mt-16 flex justify-center">
+                    {{ $articles->links() }}
+                </div>
+            @endif
         </div>
     </section>
 </x-layouts.app>
