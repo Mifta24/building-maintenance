@@ -3,7 +3,7 @@
 <article
     class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
     @if ($article->image)
-        <img src="{{ asset('images/article/' . $article->image) }}" alt="{{ $article->headline }}"
+        <img src="{{ asset('images/articles/' . $article->image) }}" alt="{{ $article->headline }}"
             class="w-full h-48 object-cover">
     @else
         <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
@@ -18,7 +18,7 @@
             {{ $article->lead }}
         </p>
         <div class="mt-auto flex justify-between items-center">
-            <a href="{{ route('articles.show', $article) }}"
+            <a href="{{ route('admin.article.show', $article) }}"
                 class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
             <span class="text-sm text-gray-500">{{ $article->created_at->format('Y年n月j日') }}</span>
         </div>

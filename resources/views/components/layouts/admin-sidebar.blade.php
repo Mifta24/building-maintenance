@@ -39,7 +39,7 @@
 
             {{-- Tautan Service (Ganti route jika perlu) --}}
             <li>
-                <a href="#"
+                <a href="{{ route('admin.service.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
                           {{ request()->routeIs('admin.service.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -54,7 +54,7 @@
 
             {{-- Tautan Sponsor (Ganti route jika perlu) --}}
             <li>
-                <a href="#"
+                <a href="{{ route('admin.partner.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
                           {{ request()->routeIs('admin.sponsor.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"

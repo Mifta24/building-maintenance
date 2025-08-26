@@ -13,8 +13,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->paginate(5);
-        return view('article.index', compact('articles'));
+        $articles = Article::latest()->paginate(10);
+
+        return view('admin.article.index', compact('articles'));
     }
 
     /**
@@ -22,7 +23,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('admin.article.create');
     }
 
     /**
@@ -44,7 +45,7 @@ class ArticleController extends Controller
             // Membuat nama file unik (timestamp + nama asli)
             $imageName = time() . '_' . $file->getClientOriginalName();
             // Pindahkan file ke folder public/images/produk
-            $file->move(public_path('images/article'), $imageName);
+            $file->move(public_path('images/articles'), $imageName);
             $input['image'] = $imageName;
         }
 
@@ -58,7 +59,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('article.show', compact('article'));
+        return view('admin.article.show', compact('article'));
     }
 
     /**
@@ -66,7 +67,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('article.edit', compact('article'));
+        return view('admin.article.edit', compact('article'));
     }
 
     /**
@@ -85,13 +86,13 @@ class ArticleController extends Controller
 
         if ($request->hasFile('image')) {
             // Hapus image lama jika ada
-            if ($article->image && File::exists(public_path('images/article/' . $article->image))) {
-                File::delete(public_path('images/article/' . $article->image));
+            if ($article->image && File::exists(public_path('images/articles/' . $article->image))) {
+                File::delete(public_path('images/articles/' . $article->image));
             }
 
             $file = $request->file('image');
             $imageName = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('images/article'), $imageName);
+            $file->move(public_path('images/articles'), $imageName);
             $input['image'] = $imageName;
         }
 
@@ -106,22 +107,16 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        // 1. Cek apakah artikel memiliki gambar
         if ($article->image) {
-            // 2. Tentukan path lengkap ke file gambar
-            $image_path = public_path('images/article/' . $article->image);
+            $image_path = public_path('images/articles/' . $article->image);
 
-            // 3. Cek apakah file benar-benar ada di server
             if (File::exists($image_path)) {
-                // 4. Hapus file gambar dari folder public
                 File::delete($image_path);
             }
         }
 
-        // 5. Setelah file dihapus, hapus data artikel dari database
         $article->delete();
 
-        // 6. Redirect kembali dengan pesan sukses
         return redirect()->route('admin.article.index')
             ->with('success', 'Artikel beserta gambarnya berhasil dihapus.');
     }

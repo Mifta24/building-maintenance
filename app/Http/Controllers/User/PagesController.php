@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Service;
 
 class PagesController extends Controller
 {
@@ -52,12 +53,8 @@ class PagesController extends Controller
 
     public function services()
     {
-        return view('user.services');
-    }
+        $services = Service::latest()->paginate(6);
 
-    // ADMIN
-    public function admin()
-    {
-        return view('admin.index');
+        return view('user.services', compact('services'));
     }
 }

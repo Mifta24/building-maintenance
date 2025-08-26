@@ -81,23 +81,13 @@
                 </p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <x-service-card imageUrl="https://i.pinimg.com/1200x/1a/c9/ee/1ac9ee1ba597e2a8991a51b72e1e5d2e.jpg"
-                    title="電気設備保守" description="受変電設備から照明器具まで、電力の安定供給と安全を確保するための点検・保守を行います。"></x-service-card>
-
-                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
-                    title="空調設備点検" description="快適な室内環境を維持するため、業務用エアコンや換気システムの定期的な性能チェックと清掃を実施します。"></x-service-card>
-
-                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
-                    title="消防設備点検" description="消火器、火災報知器、スプリンクラーなどの消防用設備が正常に作動するかを法に基づき点検します。"></x-service-card>
-
-                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
-                    title="給排水衛生設備管理" description="貯水槽の清掃や水質検査、ポンプの点検などを行い、安全で衛生的な水の供給を維持します。"></x-service-card>
-
-                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
-                    title="建物全体診断" description="専門家が建物の構造、外壁、防水などを総合的に診断し、長期的な修繕計画の策定をサポートします。"></x-service-card>
-
-                <x-service-card imageUrl="https://i.pinimg.com/736x/5e/ee/82/5eee82491b7ebea4cf89761ff815eda7.jpg"
-                    title="省エネルギー提案" description="エネルギー消費量を分析し、LED化や高効率空調への更新など、コスト削減に繋がるご提案をします。"></x-service-card>
+                @forelse ($services as $service)
+                    <x-service-card :service="$service" />
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-12">
+                        <p class="text-xl">サービスはありません</p>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>

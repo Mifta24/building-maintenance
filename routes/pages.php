@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\PagesController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\Auth\ExhibitionRegistrationController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PartnerController;
 
 // USER PAGES
 Route::controller(PagesController::class)->name('pages.')->group(function () {
@@ -31,8 +34,10 @@ Route::prefix('exhibition')->group(function () {
 
 // ADMIN
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', [PagesController::class, 'admin'])->middleware(['verified'])->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->middleware(['verified'])->name('index');
 
 
     Route::resource('article', ArticleController::class);
+    Route::resource('service', ServiceController::class);
+    Route::resource('partner', PartnerController::class);
 });

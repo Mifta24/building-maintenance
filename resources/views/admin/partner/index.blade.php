@@ -1,7 +1,7 @@
 <x-layouts.admin-app>
     {{-- Mengatur judul halaman --}}
     <x-slot:title>
-        Manajemen Artikel
+        Manajemen partner
     </x-slot:title>
 
     {{-- Pesan Sukses --}}
@@ -16,10 +16,10 @@
     <div class="bg-white dark:bg-gray-800 shadow-md sm:rounded-lg overflow-hidden">
         <div class="p-4">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
-                Daftar Artikel
+                Daftar partner
             </h2>
             <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                Kelola semua artikel berita dan layanan di sini.
+                Kelola semua partner berita dan layanan di sini.
             </p>
         </div>
 
@@ -31,20 +31,20 @@
                 {{-- <form class="flex items-center">
                     <label for="simple-search" class="sr-only">Cari</label>
                     <div class="relative w-full">
-                        <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600" placeholder="Cari artikel...">
+                        <input type="text" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600" placeholder="Cari partner...">
                     </div>
                 </form> --}}
             </div>
             <div
                 class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                <a href="{{ route('admin.article.create') }}"
+                <a href="{{ route('admin.partner.create') }}"
                     class="flex items-center justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     <svg class="h-3.5 w-3.5 me-2" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path clip-rule="evenodd" fill-rule="evenodd"
                             d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                     </svg>
-                    Tambah Artikel
+                    Tambah partner
                 </a>
             </div>
         </div>
@@ -56,23 +56,23 @@
                     <tr>
                         <th scope="col" class="px-6 py-3">No</th>
                         <th scope="col" class="px-6 py-3">Gambar</th>
-                        <th scope="col" class="px-6 py-3">Headline</th>
+                        <th scope="col" class="px-6 py-3">name</th>
                         <th scope="col" class="px-6 py-3">Tanggal Dibuat</th>
                         <th scope="col" class="px-6 py-3 text-right">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($articles as $article)
+                    @forelse ($partners as $partner)
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $articles->firstItem() + $loop->index }}
+                                {{ $partners->firstItem() + $loop->index }}
                             </th>
                             <td class="px-6 py-4">
-                                @if ($article->image)
-                                    <img src="{{ asset('images/article/' . $article->image) }}"
-                                        alt="{{ $article->headline }}" class="h-16 w-24 object-cover rounded">
+                                @if ($partner->image)
+                                    <img src="{{ asset('images/partners/' . $partner->image) }}"
+                                        alt="{{ $partner->name }}" class="h-16 w-24 object-cover rounded">
                                 @else
                                     <div
                                         class="h-16 w-24 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded text-xs">
@@ -80,14 +80,14 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                {{ $article->headline }}
+                                {{ $partner->name }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $article->created_at->format('d M Y') }}
+                                {{ $partner->created_at->format('d M Y') }}
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex justify-end items-center space-x-2">
-                                    <a href="{{ route('admin.article.edit', $article->id) }}"
+                                    <a href="{{ route('admin.partner.edit', $partner->id) }}"
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 
                                     {{-- Tombol Hapus dengan Modal Konfirmasi --}}
@@ -104,12 +104,12 @@
                                                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                                                     Konfirmasi Penghapusan</h3>
                                                 <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Apakah Anda
-                                                    yakin ingin menghapus artikel ini? Tindakan ini tidak dapat
+                                                    yakin ingin menghapus partner ini? Tindakan ini tidak dapat
                                                     dibatalkan.</p>
                                                 <div class="mt-6 flex justify-end space-x-3">
                                                     <button @click="open = false"
                                                         class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:bg-gray-600">Batal</button>
-                                                    <form action="{{ route('admin.article.destroy', $article->id) }}"
+                                                    <form action="{{ route('admin.partner.destroy', $partner->id) }}"
                                                         method="POST" class="inline">
                                                         @csrf
                                                         @method('DELETE')
@@ -127,7 +127,7 @@
                     @empty
                         <tr>
                             <td colspan="5" class="px-6 py-4 text-center text-gray-500 dark:text-gray-400">
-                                Tidak ada artikel yang ditemukan.
+                                Tidak ada partner yang ditemukan.
                             </td>
                         </tr>
                     @endforelse
@@ -137,7 +137,7 @@
 
         {{-- Paginasi --}}
         <div class="p-4 border-t dark:border-gray-700">
-            {{ $articles->links() }}
+            {{ $partners->links() }}
         </div>
     </div>
 </x-layouts.admin-app>
