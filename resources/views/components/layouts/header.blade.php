@@ -2,19 +2,23 @@
     <div
         class="bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative w-full py-4 px-6 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl md:mx-auto md:rounded-full md:py-3 md:px-8">
         <div>
-            <a href="{{ route('landing') }}" class="text-xl font-bold text-gray-800">KS設備株式会社</a>
+            <a href="{{ route('pages.landing') }}" class="text-xl font-bold text-gray-800">KS設備株式会社</a>
         </div>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-            <a href="{{ route('landing') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ホーム</a>
-            <a href="{{ route('partners') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">パートナー
+            <a href="{{ route('pages.landing') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ホーム</a>
+            <a href="{{ route('pages.partners') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">パートナー
             </a>
-            <a href="{{ route('about') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">会社概要
+            <a href="{{ route('pages.about') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">会社概要
             </a>
-            <a href="{{ route('blog') }}" class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ブログ
+            <a href="{{ route('pages.blog') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ブログ
             </a>
-            <a href="{{ route('contact') }}"
+            <a href="{{ route('pages.contact') }}"
                 class="text-gray-600 font-bold hover:text-blue-500 transition-colors">お問い合わせ</a>
         </nav>
 
@@ -36,15 +40,15 @@
     <div id="mobile-menu" class="md:hidden hidden mt-4 max-w-5xl mx-auto px-4">
         <div class="bg-white/95 text-center backdrop-blur-sm rounded-2xl shadow-lg py-4 px-6">
             <nav class="flex flex-col space-y-4">
-                <a href="{{ route('landing') }}"
+                <a href="{{ route('pages.landing') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ホーム</a>
-                <a href="{{ route('partners') }}"
+                <a href="{{ route('pages.partners') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">パートナー</a>
-                <a href="{{ route('about') }}"
+                <a href="{{ route('pages.about') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">会社概要</a>
-                <a href="{{ route('blog') }}"
+                <a href="{{ route('pages.blog') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ブログ</a>
-                <a href="{{ route('contact') }}"
+                <a href="{{ route('pages.contact') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2">お問い合わせ</a>
             </nav>
         </div>

@@ -19,7 +19,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('article.update', $article->id) }}" method="POST"
+                        <form action="{{ route('admin.article.update', $article->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="text-end">
-                                <a href="{{ route('article.index') }}" class="btn btn-secondary">Kembali</a>
+                                <a href="{{ route('admin.article.index') }}" class="btn btn-secondary">Kembali</a>
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </div>
 

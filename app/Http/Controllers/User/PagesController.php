@@ -54,4 +54,10 @@ class PagesController extends Controller
     {
         return view('user.services');
     }
+
+    // ADMIN
+    public function admin()
+    {
+        return view('admin.index');
+    }
 }

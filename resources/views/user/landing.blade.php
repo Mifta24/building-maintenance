@@ -51,7 +51,7 @@
                         ビルの管理において、信頼に妥協は許されません。
                         当社は、日本国内でごく限られた専門家だけが所有している特殊な資格を保持しており…
                     </p>
-                    <a href="{{ route('services') }}"
+                    <a href="{{ route('pages.services') }}"
                         class="mt-8 inline-block bg-blue-400 text-white font-semibold py-2 px-10 rounded-full hover:bg-blue-500 transition-colors shadow-lg">
                         詳細はこちら
                     </a>
@@ -133,7 +133,7 @@
                     当社を選んでいただくということは、単にメンテナンス会社を雇うのではなく、ビルの価値とオーナー様の安心を守る信頼できる専門家とパートナーになるということです。
                 </p>
                 <div class="mt-8">
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('pages.contact') }}"
                         class="inline-block bg-[#003858] text-white font-semibold py-3 px-10 rounded-md hover:bg-opacity-90 transition-opacity duration-300">
                         お問い合わせ
                     </a>
@@ -228,7 +228,7 @@
 
 
             <div class="mt-16 text-center">
-                <a href="{{ route('blog') }}#section-blog-posts"
+                <a href="{{ route('pages.blog') }}#section-blog-posts"
                     class="bg-gray-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors text-base">
                     すべての記事を見る
                 </a>

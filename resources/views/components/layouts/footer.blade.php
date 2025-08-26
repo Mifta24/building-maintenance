@@ -11,19 +11,19 @@
                 <h3 class="text-lg font-bold mb-4">クイックリンク</h3>
                 <ul class="space-y-3">
                     <li>
-                        <a href="{{ route('landing') }}" class="hover:text-gray-300 hover:underline">ホーム</a>
+                        <a href="{{ route('pages.landing') }}" class="hover:text-gray-300 hover:underline">ホーム</a>
                     </li>
                     <li>
-                        <a href="{{ route('partners') }}" class="hover:text-gray-300 hover:underline">パートナー</a>
+                        <a href="{{ route('pages.partners') }}" class="hover:text-gray-300 hover:underline">パートナー</a>
                     </li>
                     <li>
-                        <a href="{{ route('about') }}" class="hover:text-gray-300 hover:underline">会社概要</a>
+                        <a href="{{ route('pages.about') }}" class="hover:text-gray-300 hover:underline">会社概要</a>
                     </li>
                     <li>
-                        <a href="{{ route('blog') }}" class="hover:text-gray-300 hover:underline">ブログ</a>
+                        <a href="{{ route('pages.blog') }}" class="hover:text-gray-300 hover:underline">ブログ</a>
                     </li>
                     <li>
-                        <a href="{{ route('contact') }}" class="hover:text-gray-300 hover:underline">お問い合わせ
+                        <a href="{{ route('pages.contact') }}" class="hover:text-gray-300 hover:underline">お問い合わせ
                         </a>
                     </li>
                 </ul>

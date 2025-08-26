@@ -19,7 +19,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('article.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.article.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3">
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="text-end">
-                                <a href="{{ route('article.index') }}" class="btn btn-secondary">Kembali</a>
+                                <a href="{{ route('admin.article.index') }}" class="btn btn-secondary">Kembali</a>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
 

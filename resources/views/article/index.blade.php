@@ -1,6 +1,6 @@
 <x-layouts.admin-app>
     <h1>Daftar article</h1>
-    <a href="{{ route('article.create') }}" class="btn btn-primary mb-3">Tambah article</a>
+    <a href="{{ route('admin.article.create') }}" class="btn btn-primary mb-3">Tambah article</a>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">{{ $message }}</div>
@@ -27,8 +27,8 @@
                 <td>{{ $article->headline }}</td>
                 {{-- <td>{{ $article->stok }}</td> --}}
                 <td>
-                    <form action="{{ route('article.destroy', $article->id) }}" method="POST">
-                        <a class="btn btn-info" href="{{ route('article.edit', $article->id) }}">Edit</a>
+                    <form action="{{ route('admin.article.destroy', $article->id) }}" method="POST">
+                        <a class="btn btn-info" href="{{ route('admin.article.edit', $article->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>

@@ -39,7 +39,7 @@
 
             {{-- Opsional: Sembunyikan juga link paginasi jika tidak ada artikel --}}
             @if ($articles->hasPages())
-                <div class="mt-16 flex justify-center">
+                <div class="mt-16">
                     {{ $articles->links() }}
                 </div>
             @endif
