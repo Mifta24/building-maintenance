@@ -13,7 +13,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->paginate(10);
+        $articles = Article::latest()->paginate(5);
         return view('article.index', compact('articles'));
     }
 
@@ -50,7 +50,7 @@ class ArticleController extends Controller
 
         Article::create($input);
 
-        return redirect()->route('article.index')->with('success', 'Article successfully added');
+        return redirect()->route('admin.article.index')->with('success', 'Article successfully added');
     }
 
     /**
@@ -97,7 +97,7 @@ class ArticleController extends Controller
 
         $article->update($input);
 
-        return redirect()->route('article.index')
+        return redirect()->route('admin.article.index')
             ->with('success', 'the article has been successfully updated.');
     }
 
@@ -122,7 +122,7 @@ class ArticleController extends Controller
         $article->delete();
 
         // 6. Redirect kembali dengan pesan sukses
-        return redirect()->route('article.index')
+        return redirect()->route('admin.article.index')
             ->with('success', 'Artikel beserta gambarnya berhasil dihapus.');
     }
 }
