@@ -68,7 +68,7 @@
             </li>
 
             {{-- Tautan Akun Admin (Ganti route jika perlu) --}}
-            <li>
+            {{-- <li>
                 <a href="#"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
                           {{ request()->routeIs('admin.account.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
@@ -79,7 +79,7 @@
                     </svg>
                     <span>Akun Admin</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </nav>
 </aside>

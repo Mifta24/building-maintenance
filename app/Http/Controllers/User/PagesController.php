@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Service;
+use App\Models\Partner;
 
 class PagesController extends Controller
 {
@@ -33,7 +34,9 @@ class PagesController extends Controller
 
     public function partners()
     {
-        return view('user.partners');
+        $partners = Partner::latest()->take(6)->get();
+
+        return view('user.partners', compact('partners'));
     }
 
     public function blog()
@@ -45,6 +48,7 @@ class PagesController extends Controller
 
         return view('user.blog', compact('articles'));
     }
+
 
     public function contact()
     {

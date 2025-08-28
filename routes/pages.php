@@ -22,7 +22,7 @@ Route::controller(PagesController::class)->name('pages.')->group(function () {
 });
 
 // articles
-Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
 
 // exhibition
 Route::prefix('exhibition')->group(function () {
@@ -35,7 +35,6 @@ Route::prefix('exhibition')->group(function () {
 // ADMIN
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->middleware(['verified'])->name('index');
-
 
     Route::resource('article', ArticleController::class);
     Route::resource('service', ServiceController::class);
