@@ -2,7 +2,7 @@
 
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
     @if ($service->image)
-        <img src="{{ asset('images/service/' . $service->image) }}" alt="{{ $service->name }}"
+        <img src="{{ asset('images/services/' . $service->image) }}" alt="{{ $service->name }}"
             class="w-full h-48 object-cover">
     @else
         <div class="w-full h-48 bg-gray-200 flex items-center justify-center">

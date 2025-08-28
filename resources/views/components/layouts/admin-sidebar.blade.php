@@ -1,6 +1,6 @@
-<aside class="w-64 flex-shrink-0 bg-gray-800 text-gray-300 flex flex-col">
+<aside class="w-64 flex-shrink-0 bg-white text-gray-600 flex flex-col border-r border-gray-200">
     <!-- Logo/Header Sidebar -->
-    <div class="h-16 flex items-center justify-center text-white text-xl font-bold border-b border-gray-700">
+    <div class="h-16 flex items-center justify-center text-gray-800 text-xl font-bold border-b border-gray-200">
         Admin Panel
     </div>
 
@@ -11,7 +11,7 @@
             <li>
                 <a href="{{ route('admin.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
-                          {{ request()->routeIs('admin.index') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
+                           {{ request()->routeIs('admin.index') ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-100 hover:text-gray-900' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -26,7 +26,7 @@
             <li>
                 <a href="{{ route('admin.article.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
-                          {{ request()->routeIs('admin.article.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
+                           {{ request()->routeIs('admin.article.*') ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-100 hover:text-gray-900' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -37,11 +37,11 @@
                 </a>
             </li>
 
-            {{-- Tautan Service (Ganti route jika perlu) --}}
+            {{-- Tautan Service --}}
             <li>
                 <a href="{{ route('admin.service.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
-                          {{ request()->routeIs('admin.service.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
+                           {{ request()->routeIs('admin.service.*') ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-100 hover:text-gray-900' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -52,11 +52,11 @@
                 </a>
             </li>
 
-            {{-- Tautan Sponsor (Ganti route jika perlu) --}}
+            {{-- Tautan Sponsor --}}
             <li>
                 <a href="{{ route('admin.partner.index') }}"
                     class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
-                          {{ request()->routeIs('admin.sponsor.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
+                           {{ request()->routeIs('admin.sponsor.*') ? 'bg-gray-100 text-gray-900' : 'hover:bg-gray-100 hover:text-gray-900' }}">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -67,19 +67,6 @@
                 </a>
             </li>
 
-            {{-- Tautan Akun Admin (Ganti route jika perlu) --}}
-            {{-- <li>
-                <a href="#"
-                    class="flex items-center px-4 py-2 rounded-lg transition-colors duration-200
-                          {{ request()->routeIs('admin.account.*') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
-                    <span>Akun Admin</span>
-                </a>
-            </li> --}}
         </ul>
     </nav>
 </aside>
