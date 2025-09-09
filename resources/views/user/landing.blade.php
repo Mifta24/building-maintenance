@@ -258,7 +258,8 @@
                     </p>
 
                     <div class="mt-8">
-                        <h3 class="text-3xl font-bold mb-12">KS設備株式会社</h3>
+                        <img src="{{ asset('images/logo/logo2.png') }}" class="w-24 h-auto" />
+                        {{-- <h3 class="text-3xl font-bold mb-12">KS設備株式会社</h3> --}}
                     </div>
 
                     <div class="mt-8 space-y-3 text-lg">
@@ -281,7 +282,6 @@
                 </div>
 
                 <div class="lg:w-7/12 lg:mt-4">
-                    <!-- <h3 class="text-3xl font-bold mb-12">KS設備株式会社</h3> -->
                     <form action="#" method="POST" class="space-y-10">
                         <div>
                             <label for="name" class="block text-xl font-medium">氏名</label>

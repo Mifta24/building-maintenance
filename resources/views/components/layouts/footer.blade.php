@@ -3,7 +3,9 @@
         <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div class="md:col-span-2">
                 <div>
-                    <h2 class="text-2xl font-bold">KS設備株式会社</h2>
+                    {{-- <h2 class="text-2xl font-bold">KS設備株式会社</h2> --}}
+                    <img src="{{ asset('images/logo/logo1.png') }}" class="w-24 h-auto" />
+
                 </div>
             </div>
 

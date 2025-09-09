@@ -2,7 +2,11 @@
     <div
         class="bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative w-full py-4 px-6 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl md:mx-auto md:rounded-full md:py-3 md:px-8">
         <div>
-            <a href="{{ route('pages.landing') }}" class="text-xl font-bold text-gray-800">KS設備株式会社</a>
+
+            <a href="{{ route('pages.landing') }}" class="text-xl font-bold text-gray-800">
+                <span class="sr-only">Ks Equipment - Landing</span>
+                <img src="{{ asset('images/logo/logo1.png') }}" class="h-10 w-auto" />
+            </a>
         </div>
 
         <!-- Desktop Navigation -->
