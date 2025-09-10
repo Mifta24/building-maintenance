@@ -1,5 +1,5 @@
 <x-layouts.app>
-    <div class="bg-white py-12 md:py-24">
+    <div class="bg-white py-24 md:py-32">
         <div class="container mx-auto px-4 lg:px-6">
 
             <article class="max-w-4xl mx-auto">
