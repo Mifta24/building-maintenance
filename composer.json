@@ -65,6 +65,14 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "nixpacks": {
+            "php_extensions": [
+                "pdo_mysql",
+                "bcmath",
+                "gd",
+                "intl"
+            ]
         }
     },
     "config": {
