@@ -17,7 +17,7 @@ class PartnerFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'https://source.unsplash.com/random/800x600?' . $this->faker->word(),
+            'image' => '',
             'name' => $this->faker->company(),
             'description' => $this->faker->sentence(10, true),
         ];

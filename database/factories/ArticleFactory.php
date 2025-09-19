@@ -17,7 +17,7 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'image' => 'https://source.unsplash.com/random/800x600?' . $this->faker->word(),
+            'image' => '',
             'headline' => $this->faker->sentence(6, true),
             'lead' => $this->faker->sentence(12, true),
             'body' => $this->faker->paragraphs(3, true),
