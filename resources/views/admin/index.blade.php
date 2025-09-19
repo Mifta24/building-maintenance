@@ -11,7 +11,7 @@
 
     {{-- Grid untuk Kartu Statistik --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Kartu Jumlah Artikel -->
+        <!-- Kartu Jumlah Article -->
         <div class="bg-white rounded-lg shadow p-6">
             <div class="flex items-center">
                 <div class="p-3 rounded-full bg-blue-500 bg-opacity-20">
@@ -23,7 +23,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Total Artikel</p>
+                    <p class="text-sm font-medium text-gray-500">Total Article</p>
                     <p class="text-2xl font-bold text-gray-900">{{ $totalArticles }}</p>
                 </div>
             </div>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <!-- Kartu Jumlah Sponsor -->
+        <!-- Kartu Jumlah Partner -->
         <div class="bg-white rounded-lg shadow p-6">
             <div class="flex items-center">
                 <div class="p-3 rounded-full bg-yellow-500 bg-opacity-20">
@@ -59,7 +59,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-500">Total Sponsor</p>
+                    <p class="text-sm font-medium text-gray-500">Total Partner</p>
                     <p class="text-2xl font-bold text-gray-900">{{ $totalPartners }}</p>
                 </div>
             </div>
