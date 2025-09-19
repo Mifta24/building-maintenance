@@ -17,9 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Users
-        // User::factory(10)->create();
+        User::truncate();
+        Article::truncate();
+        Service::truncate();
+        Partner::truncate();
 
+        // Users
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
