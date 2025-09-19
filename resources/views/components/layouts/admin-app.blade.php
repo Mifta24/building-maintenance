@@ -4,35 +4,52 @@
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<x-layouts.head title="{{ $title }}" />
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        {{ $title }}
+    </title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+
+    {{-- IBM font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    {{-- TINY MCE --}}
+    <x-head.tinymce-config />
+
+    <!-- Styles / Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+</head>
 
 <body class="bg-gray-100 font-sans antialiased">
-    <div class="flex h-screen bg-gray-200">
+    <div class="flex h-screen">
         <!-- Sidebar -->
-        <x-layouts.admin-sidebar></x-layouts.admin-sidebar>
+        <x-layouts.admin-sidebar />
 
-        <!-- Main Content -->
-        <div class="flex-1 flex flex-col overflow-hidden">
-            <!-- Header -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-2xl font-semibold text-gray-800">
-                        {{ $title ?? 'Dashboard' }}
-                    </h1>
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-                <div class="container mx-auto px-6 py-8">
-                    {{ $slot }}
-                </div>
-            </main>
-        </div>
+        <!-- Page Content -->
+        <main class="antialiased flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+            <x-layouts.admin-header />
+            <div class="container mx-auto px-6 py-8">
+                {{ $slot }}
+            </div>
+        </main>
     </div>
 </body>
-
-
 
 </html>
