@@ -27,12 +27,15 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libicu-dev \
     libzip-dev \
+    libpq-dev \
     unzip \
     git \
     curl \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install \
        pdo_mysql \
+       pgsql \
+        pdo_pgsql \
        bcmath \
        gd \
        intl \
