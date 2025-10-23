@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
         Partner::truncate();
 
         // Users
-        User::factory()->create([
+        User::create([
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
-        User::factory()->create([
+        User::create([
             'name' => 'John Admin',
             'email' => 'admin@example.com',
             'password' => Hash::make('admin12345'),
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'name' => '緊急時対応能力',
             'description' => '万が一の設備トラブル発生時にも、資格保有者が迅速かつ的確な判断を下し、被害を最小限に抑えます。',
         ]);
-        
+
         Service::create([
             'image' => '',
             'name' => '高度な技術力',
@@ -95,7 +95,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'インテリアデザイン今',
             'description' => 'プロフェッショナルやデザイン愛好者向けのインテリアデザインの最新のインスピレーションとトレンド。',
         ]);
-        
+
         Partner::create([
             'image' => '',
             'name' => 'エンジニアリングポスト',
