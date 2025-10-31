@@ -38,14 +38,21 @@
 </head>
 
 <body class="bg-gray-100 font-sans antialiased">
-    <div class="flex h-screen">
+    <div x-data="{ sidebarOpen: false }" class="flex h-screen">
         <!-- Sidebar -->
-        <x-layouts.admin-sidebar />
+        <div :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" x-cloak
+            class="fixed lg:relative lg:translate-x-0 z-30 w-64 flex-shrink-0 bg-white text-gray-600 flex flex-col border-r border-gray-200 transition-transform duration-300 ease-in-out h-screen">
+            <x-layouts.admin-sidebar />
+        </div>
+
+        <!-- Overlay for mobile -->
+        <div x-show="sidebarOpen" @click="sidebarOpen = false" x-cloak
+            class="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"></div>
 
         <!-- Page Content -->
         <main class="antialiased flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
             <x-layouts.admin-header />
-            <div class="container mx-auto px-6 py-8">
+            <div class="container mx-auto px-4 sm:px-6 py-4 sm:py-8">
                 {{ $slot }}
             </div>
         </main>
