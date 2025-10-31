@@ -12,7 +12,7 @@
                 </p>
 
                 @if ($partner->image)
-                    <img src="{{ asset('images/partners/' . $partner->image) }}" alt="{{ $partner->name }}"
+                    <img src="{{ $partner->medium_image ?? $partner->image }}" alt="{{ $partner->name }}"
                         class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8">
                 @endif
 

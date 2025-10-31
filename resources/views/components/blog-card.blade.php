@@ -3,7 +3,7 @@
 <article
     class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-transform hover:scale-105 duration-300">
     @if ($article->image)
-        <img src="{{ asset('images/articles/' . $article->image) }}" alt="{{ $article->headline }}"
+        <img src="{{ $article->thumbnail ?? $article->image }}" alt="{{ $article->headline }}"
             class="w-full h-48 object-cover">
     @else
         <div class="w-full h-48 bg-gray-200 flex items-center justify-center">

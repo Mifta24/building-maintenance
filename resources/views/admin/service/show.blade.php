@@ -12,7 +12,7 @@
                 </p>
 
                 @if ($service->image)
-                    <img src="{{ asset('images/services/' . $service->image) }}" alt="{{ $service->name }}"
+                    <img src="{{ $service->medium_image ?? $service->image }}" alt="{{ $service->name }}"
                         class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8">
                 @endif
 

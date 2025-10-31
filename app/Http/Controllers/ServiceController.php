@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Config;
 
 class ServiceController extends Controller
 {
@@ -41,11 +41,16 @@ class ServiceController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            // Membuat nama file unik (timestamp + nama asli)
-            $imageName = time() . '_' . $file->getClientOriginalName();
-            // Pindahkan file ke folder public/images/
-            $file->move(public_path('images/services'), $imageName);
-            $input['image'] = $imageName;
+            $folder = Config::get('cloudinary.folders.services', 'services');
+            $imageUrl = (new Service)->uploadImageToCloudinary($file, $folder);
+
+            if ($imageUrl) {
+                $input['image'] = $imageUrl;
+            } else {
+                return redirect()->back()
+                    ->with('error', 'Failed to upload image to Cloudinary')
+                    ->withInput();
+            }
         }
 
         Service::create($input);
@@ -83,15 +88,22 @@ class ServiceController extends Controller
         $input = $request->all();
 
         if ($request->hasFile('image')) {
-            // Hapus image lama jika ada
-            if ($service->image && File::exists(public_path('images/services/' . $service->image))) {
-                File::delete(public_path('images/services/' . $service->image));
+            // Hapus image lama dari Cloudinary jika ada
+            if ($service->image) {
+                $service->deleteImageFromCloudinary($service->image);
             }
 
             $file = $request->file('image');
-            $imageName = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('images/services'), $imageName);
-            $input['image'] = $imageName;
+            $folder = Config::get('cloudinary.folders.services', 'services');
+            $imageUrl = $service->uploadImageToCloudinary($file, $folder);
+
+            if ($imageUrl) {
+                $input['image'] = $imageUrl;
+            } else {
+                return redirect()->back()
+                    ->with('error', 'Failed to upload image to Cloudinary')
+                    ->withInput();
+            }
         }
 
         $service->update($input);
@@ -105,14 +117,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        if ($service->image) {
-            $image_path = public_path('images/services/' . $service->image);
-
-            if (File::exists($image_path)) {
-                File::delete($image_path);
-            }
-        }
-
+        // Image deletion from Cloudinary is handled in the model's boot method
         $service->delete();
 
         return redirect()->route('admin.service.index')

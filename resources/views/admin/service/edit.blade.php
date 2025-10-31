@@ -48,7 +48,7 @@
                 @enderror
             </div>
 
-            <div x-data="{ imagePreview: '{{ $service->image ? asset('images/services/' . $service->image) : null }}' }">
+            <div x-data="{ imagePreview: '{{ $service->image ?? null }}' }">
                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Change Service
                     Image</label>
 

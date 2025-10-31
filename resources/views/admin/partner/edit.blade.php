@@ -48,7 +48,7 @@
                 @enderror
             </div>
 
-            <div x-data="{ imagePreview: '{{ $partner->image ? asset('images/partners/' . $partner->image) : null }}' }">
+            <div x-data="{ imagePreview: '{{ $partner->image ?? null }}' }">
                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Change Partner
                     Image</label>
 

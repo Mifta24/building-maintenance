@@ -12,7 +12,7 @@
                 </p>
 
                 @if ($article->image)
-                    <img src="{{ asset('images/articles/' . $article->image) }}" alt="{{ $article->headline }}"
+                    <img src="{{ $article->medium_image ?? $article->image }}" alt="{{ $article->headline }}"
                         class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8">
                 @endif
 

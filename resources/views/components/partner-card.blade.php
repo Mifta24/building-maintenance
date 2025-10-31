@@ -5,8 +5,7 @@
     <div class="flex flex-col h-full">
         <div class="mb-4 flex-shrink-0">
             @if ($partner->image)
-                <img src="{{ asset('images/partners/' . $partner->image) }}" alt="Media Partner Logo"
-                    class="h-16 w-auto mx-auto object-contain" />
+                <img src="{{ $partner->image }}" alt="Media Partner Logo" class="h-16 w-auto mx-auto object-contain" />
             @else
                 <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
                     <span class="text-gray-500">画像はありません</span>

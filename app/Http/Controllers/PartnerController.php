@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Partner;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Config;
 
 class PartnerController extends Controller
 {
@@ -41,14 +41,19 @@ class PartnerController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            // Membuat nama file unik (timestamp + nama asli)
-            $imageName = time() . '_' . $file->getClientOriginalName();
-            // Pindahkan file ke folder public/images/
-            $file->move(public_path('images/partners'), $imageName);
-            $input['image'] = $imageName;
+            $folder = Config::get('cloudinary.folders.partners', 'partners');
+            $imageUrl = (new Partner)->uploadImageToCloudinary($file, $folder);
+
+            if ($imageUrl) {
+                $input['image'] = $imageUrl;
+            } else {
+                return redirect()->back()
+                    ->with('error', 'Failed to upload image to Cloudinary')
+                    ->withInput();
+            }
         }
 
-        partner::create($input);
+        Partner::create($input);
 
         return redirect()->route('admin.partner.index')->with('success', 'partner successfully added');
     }
@@ -83,15 +88,22 @@ class PartnerController extends Controller
         $input = $request->all();
 
         if ($request->hasFile('image')) {
-            // Hapus image lama jika ada
-            if ($partner->image && File::exists(public_path('images/partners/' . $partner->image))) {
-                File::delete(public_path('images/partners/' . $partner->image));
+            // Hapus image lama dari Cloudinary jika ada
+            if ($partner->image) {
+                $partner->deleteImageFromCloudinary($partner->image);
             }
 
             $file = $request->file('image');
-            $imageName = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('images/partners'), $imageName);
-            $input['image'] = $imageName;
+            $folder = Config::get('cloudinary.folders.partners', 'partners');
+            $imageUrl = $partner->uploadImageToCloudinary($file, $folder);
+
+            if ($imageUrl) {
+                $input['image'] = $imageUrl;
+            } else {
+                return redirect()->back()
+                    ->with('error', 'Failed to upload image to Cloudinary')
+                    ->withInput();
+            }
         }
 
         $partner->update($input);
@@ -105,14 +117,7 @@ class PartnerController extends Controller
      */
     public function destroy(Partner $partner)
     {
-        if ($partner->image) {
-            $image_path = public_path('images/partners/' . $partner->image);
-
-            if (File::exists($image_path)) {
-                File::delete($image_path);
-            }
-        }
-
+        // Image deletion from Cloudinary is handled in the model's boot method
         $partner->delete();
 
         return redirect()->route('admin.partner.index')
