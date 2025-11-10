@@ -14,6 +14,6 @@ class DashboardController extends Controller
         $totalArticles = Article::count();
         $totalServices = Service::count();
 
-        return view('admin.index', compact('totalArticles', 'totalServices', 'totalPartners'));
+        return view('admin.index', compact('totalArticles', 'totalServices'));
     }
 }
