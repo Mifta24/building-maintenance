@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use App\Services\CloudinaryService;
 
 class ArticleController extends Controller
 {
+    protected $cloudinary;
+
+    public function __construct(CloudinaryService $cloudinary)
+    {
+        $this->cloudinary = $cloudinary;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -31,30 +39,24 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'headline' => 'required|string|max:255',
             'lead' => 'required|string|max:255',
             'body' => 'required|string',
         ]);
 
-        $input = $request->all();
-
         if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $folder = Config::get('cloudinary.folders.articles', 'articles');
-            $imageUrl = (new Article)->uploadImageToCloudinary($file, $folder);
-
-            if ($imageUrl) {
-                $input['image'] = $imageUrl;
-            } else {
-                return redirect()->back()
-                    ->with('error', 'Failed to upload image to Cloudinary')
-                    ->withInput();
+            try {
+                $folder = config('cloudinary.folders.articles', 'articles');
+                $imageUrl = $this->cloudinary->uploadImage($request->file('image'), $folder);
+                $validated['image'] = $imageUrl;
+            } catch (\Exception $e) {
+                return back()->with('error', 'Upload gagal: ' . $e->getMessage())->withInput();
             }
         }
 
-        Article::create($input);
+        Article::create($validated);
 
         return redirect()->route('admin.article.index')->with('success', 'Article successfully added');
     }
