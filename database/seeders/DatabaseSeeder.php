@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
-use App\Models\Partner;
 use App\Models\Service;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -21,7 +20,6 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Article::truncate();
         Service::truncate();
-        Partner::truncate();
 
         // Users
         User::create([
@@ -82,43 +80,6 @@ class DatabaseSeeder extends Seeder
             'image' => '',
             'name' => 'お問い合わせ',
             'description' => 'お問い合わせ・ご相談・ご質問など、お気軽にご連絡ください。',
-        ]);
-
-        // Partners
-        Partner::create([
-            'image' => '',
-            'name' => 'インテリアデザイン今',
-            'description' => 'プロフェッショナルやデザイン愛好者向けのインテリアデザインの最新のインスピレーションとトレンド。',
-        ]);
-
-        Partner::create([
-            'image' => '',
-            'name' => 'エンジニアリングポスト',
-            'description' => '土木および構造工学分野の専門家向けに、深いニュースと分析を提供します。',
-        ]);
-
-        Partner::create([
-            'image' => '',
-            'name' => '>インドネシア不動産雑誌',
-            'description' => 'インドネシアの不動産市場、投資、ライフスタイルを扱う、主要な印刷およびデジタルメディアです。',
-        ]);
-
-        Partner::create([
-            'image' => '',
-            'name' => 'ビルディングテックウィークリー',
-            'description' => '建設および不動産業界における技術と革新に焦点を当てたオンラインプラットフォーム。',
-        ]);
-
-        Partner::create([
-            'image' => '',
-            'name' => '>アジア建築ジャーナル',
-            'description' => 'アジア全体の革新的な建築デザインを紹介する月刊誌です。',
-        ]);
-
-        Partner::create([
-            'image' => '',
-            'name' => 'グローバル建設メディア',
-            'description' => '世界の建設業界向けの主要なニュースソースで、最新のトレンド、技術、プロジェクトをカバーしています。',
         ]);
     }
 }

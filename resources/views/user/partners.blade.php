@@ -21,14 +21,24 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Grid yang responsif untuk partner -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                @forelse ($partners as $partner)
-                    <x-partner-card :partner="$partner" />
-                @empty
-                    <div class="col-span-full text-center text-gray-500 py-12">
-                        <p class="text-xl">現在表示できる記事はありません。</p>
-                    </div>
-                @endforelse
+                <x-partner-card image="{{ asset('images/landing/8_3.svg') }}" name="インテリアデザイン今"
+                    description="プロフェッショナルやデザイン愛好者向けのインテリアデザインの最新のインスピレーションとトレンド。" />
+                <x-partner-card image="{{ asset('images/landing/8_18.svg') }}" name="エンジニアリングポスト"
+                    description="土木および構造工学分野の専門家向けに、深いニュースと分析を提供します。" />
+                <x-partner-card image="{{ asset('images/landing/8_33.svg') }}" name=">インドネシア不動産雑誌"
+                    description="インドネシアの不動産市場、投資、ライフスタイルを扱う、主要な印刷およびデジタルメディアです。" />
+                <x-partner-card image="{{ asset('images/landing/8_50.svg') }}" name="ビルディングテックウィークリー"
+                    description="建設および不動産業界における技術と革新に焦点を当てたオンラインプラットフォーム。" />
+                <x-partner-card image="{{ asset('images/landing/8_61.svg') }}" name=">アジア建築ジャーナル"
+                    description="アジア全体の革新的な建築デザインを紹介する月刊誌です。" />
+                <x-partner-card image="{{ asset('images/landing/8_3.svg') }}" name="グローバル建設メディア"
+                    description="世界の建設業界向けの主要なニュースソースで、最新のトレンド、技術、プロジェクトをカバーしています。" />
             </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     </section>
 </x-layouts.app>

@@ -6,7 +6,6 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\Auth\ExhibitionRegistrationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\PartnerController;
 
 // USER PAGES
 Route::controller(PagesController::class)->name('pages.')->group(function () {
@@ -37,7 +36,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
 
     Route::resource('article', ArticleController::class);
     Route::resource('service', ServiceController::class);
-    Route::resource('partner', PartnerController::class);
 });
 
 require __DIR__ . '/auth.php';
