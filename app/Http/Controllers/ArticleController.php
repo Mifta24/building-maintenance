@@ -123,6 +123,6 @@ class ArticleController extends Controller
         $article->delete();
 
         return redirect()->route('admin.article.index')
-            ->with('success', 'Artikel beserta gambarnya berhasil dihapus.');
+            ->with('success', 'The article and its images have been successfully deleted.');
     }
 }
