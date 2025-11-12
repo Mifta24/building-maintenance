@@ -13,6 +13,7 @@ class Article extends Model
 
     protected $fillable = [
         'image',
+        'image_public_id',
         'headline',
         'lead',
         'body',
@@ -27,8 +28,9 @@ class Article extends Model
 
         // Delete image from Cloudinary when article is deleted
         static::deleting(function ($article) {
-            if ($article->image) {
-                $article->deleteImageFromCloudinary($article->image);
+            if ($article->image_public_id) {
+                $cloudinary = app(CloudinaryService::class);
+                $cloudinary->deleteImage($article->image_public_id);
             }
         });
     }
@@ -52,13 +54,15 @@ class Article extends Model
      *
      * @return string
      */
-    public function getThumbnailAttribute()
+    public function getImageThumbnailAttribute()
     {
-        return $this->getOptimizedImage([
-            'width' => 300,
-            'height' => 200,
-            'crop' => 'fill',
-        ]);
+        if (!$this->image) {
+            return null;
+        }
+
+        // Jika menggunakan Cloudinary, bisa generate thumbnail URL
+        // Contoh: https://res.cloudinary.com/cloud-name/image/upload/w_200,h_200,c_fill/public_id
+        return $this->image;
     }
 
     /**
