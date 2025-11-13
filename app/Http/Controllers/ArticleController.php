@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Services\CloudinaryService;
 use Illuminate\Http\Request;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+use Illuminate\Support\Facades\DB;
+
 
 class ArticleController extends Controller
 {
-    protected $cloudinary;
+    private CloudinaryService $cloudinaryService;
 
-    public function __construct(CloudinaryService $cloudinary)
+    public function __construct(CloudinaryService $cloudinaryService)
     {
-        $this->cloudinary = $cloudinary;
+        $this->cloudinaryService = $cloudinaryService;
     }
 
     /**
@@ -45,26 +48,19 @@ class ArticleController extends Controller
             'body' => 'required|string',
         ]);
 
-        if ($request->hasFile('image')) {
-            try {
-                $folder = config('cloudinary.folders.articles', 'articles');
-                $uploadResult = $this->cloudinary->uploadImage($request->file('image'), $folder);
+        // Handle image upload if present
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $uploadResult = $this->cloudinaryService->uploadImage($request->file('image'), "building-maintenance/articles");
 
-                // Cek apakah upload berhasil
-                if (!$uploadResult['success']) {
-                    return back()
-                        ->with('error', 'Upload failed: ' . $uploadResult['error'])
-                        ->withInput();
-                }
-
-                // Simpan secure_url dan public_id
-                $validated['image'] = $uploadResult['secure_url'];
-                $validated['image_public_id'] = $uploadResult['public_id'];
-            } catch (\Exception $e) {
-                return back()
-                    ->with('error', 'Upload failed: ' . $e->getMessage())
-                    ->withInput();
+            if (!$uploadResult['success']) {
+                DB::rollBack();
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors(['image' => $uploadResult['error']]);
             }
+
+            $validated['image_url'] = $uploadResult['secure_url'];
+            $validated['public_id'] = $uploadResult['public_id'];
         }
 
         Article::create($validated);
@@ -104,30 +100,20 @@ class ArticleController extends Controller
 
         if ($request->hasFile('image')) {
             try {
-                // Hapus gambar lama dari Cloudinary jika ada
+                // Hapus gambar lama
                 if ($article->image_public_id) {
-                    $deleteResult = $this->cloudinary->deleteImage($article->image_public_id);
-
-                    if (!$deleteResult['success']) {
-                        \Log::warning('Failed to delete old image from Cloudinary', [
-                            'public_id' => $article->image_public_id,
-                            'error' => $deleteResult['error'] ?? 'Unknown error'
-                        ]);
-                    }
+                    Cloudinary::destroy($article->image_public_id);
                 }
 
                 // Upload gambar baru
                 $folder = config('cloudinary.folders.articles', 'articles');
-                $uploadResult = $this->cloudinary->uploadImage($request->file('image'), $folder);
+                $uploadedFile = Cloudinary::upload(
+                    $request->file('image')->getRealPath(),
+                    ['folder' => $folder]
+                );
 
-                if (!$uploadResult['success']) {
-                    return back()
-                        ->with('error', 'Upload failed: ' . $uploadResult['error'])
-                        ->withInput();
-                }
-
-                $validated['image'] = $uploadResult['secure_url'];
-                $validated['image_public_id'] = $uploadResult['public_id'];
+                $validated['image'] = $uploadedFile->getSecurePath();
+                $validated['image_public_id'] = $uploadedFile->getPublicId();
             } catch (\Exception $e) {
                 return back()
                     ->with('error', 'Upload failed: ' . $e->getMessage())
@@ -148,16 +134,9 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         try {
-            // Hapus gambar dari Cloudinary jika ada
+            // Hapus gambar dari Cloudinary
             if ($article->image_public_id) {
-                $deleteResult = $this->cloudinary->deleteImage($article->image_public_id);
-
-                if (!$deleteResult['success']) {
-                    \Log::warning('Failed to delete image from Cloudinary', [
-                        'public_id' => $article->image_public_id,
-                        'error' => $deleteResult['error'] ?? 'Unknown error'
-                    ]);
-                }
+                Cloudinary::destroy($article->image_public_id);
             }
 
             // Hapus artikel dari database

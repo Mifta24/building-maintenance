@@ -36,9 +36,4 @@ return [
 
     'folder' => env('CLOUDINARY_FOLDER'),
 
-    'folders' => [
-        'articles' => env('CLOUDINARY_ARTICLES_FOLDER', 'articles'),
-        'services' => env('CLOUDINARY_SERVICES_FOLDER', 'services'),
-        'partners' => env('CLOUDINARY_PARTNERS_FOLDER', 'partners'),
-    ],
 ];
