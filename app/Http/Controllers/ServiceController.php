@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use App\Services\CloudinaryService;
 
 class ServiceController extends Controller
 {
+    private CloudinaryService $cloudinaryService;
+
+    public function __construct(CloudinaryService $cloudinaryService)
+    {
+        $this->cloudinaryService = $cloudinaryService;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -31,31 +40,32 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        $validated = $request->validate([
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
         ]);
 
-        $input = $request->all();
+        // Handle image upload if present
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $uploadResult = $this->cloudinaryService->uploadImage($request->file('image'), "building-maintenance/services");
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $folder = Config::get('cloudinary.folders.services', 'services');
-            $imageUrl = (new Service)->uploadImageToCloudinary($file, $folder);
-
-            if ($imageUrl) {
-                $input['image'] = $imageUrl;
-            } else {
+            if (!$uploadResult['success']) {
+                DB::rollBack();
                 return redirect()->back()
-                    ->with('error', 'Failed to upload image to Cloudinary')
-                    ->withInput();
+                    ->withInput()
+                    ->withErrors(['image' => $uploadResult['error']]);
             }
+
+            $validated['image_url'] = $uploadResult['secure_url'];
+            $validated['image_public_id'] = $uploadResult['public_id'];
         }
 
-        Service::create($input);
+        Service::create($validated);
 
-        return redirect()->route('admin.service.index')->with('success', 'service successfully added');
+        return redirect()
+            ->route('admin.service.index')
+            ->with('success', 'Article successfully added');
     }
 
     /**
@@ -79,37 +89,36 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        $validated = $request->validate([
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'name' => 'required|string|max:255',
             'description' => 'required|string|max:255',
         ]);
 
-        $input = $request->all();
-
-        if ($request->hasFile('image')) {
-            // Hapus image lama dari Cloudinary jika ada
-            if ($service->image) {
-                $service->deleteImageFromCloudinary($service->image);
+        // Handle image upload if present
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // Delete old image from Cloudinary if exists
+            if ($service->image_public_id) {
+                $this->cloudinaryService->deleteImage($service->image_public_id);
             }
 
-            $file = $request->file('image');
-            $folder = Config::get('cloudinary.folders.services', 'services');
-            $imageUrl = $service->uploadImageToCloudinary($file, $folder);
+            $uploadResult = $this->cloudinaryService->uploadImage($request->file('image'), "building-maintenance/services");
 
-            if ($imageUrl) {
-                $input['image'] = $imageUrl;
-            } else {
+            if (!$uploadResult['success']) {
                 return redirect()->back()
-                    ->with('error', 'Failed to upload image to Cloudinary')
-                    ->withInput();
+                    ->withInput()
+                    ->withErrors(['image' => $uploadResult['error']]);
             }
+
+            $validated['image_url'] = $uploadResult['secure_url'];
+            $validated['image_public_id'] = $uploadResult['public_id'];
         }
 
-        $service->update($input);
+        $service->update($validated);
 
-        return redirect()->route('admin.service.index')
-            ->with('success', 'the service has been successfully updated.');
+        return redirect()
+            ->route('admin.service.index')
+            ->with('success', 'Service successfully updated');
     }
 
     /**
@@ -117,10 +126,22 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        // Image deletion from Cloudinary is handled in the model's boot method
-        $service->delete();
+        try {
+            // Delete image from Cloudinary if exists
+            if ($service->image_public_id) {
+                $this->cloudinaryService->deleteImage($service->image_public_id);
+            }
 
-        return redirect()->route('admin.service.index')
-            ->with('success', 'Service beserta gambarnya berhasil dihapus.');
+            // Delete service from database
+            $service->delete();
+
+            return redirect()
+                ->route('admin.service.index')
+                ->with('success', 'Service successfully deleted');
+        } catch (\Exception $e) {
+            return redirect()
+                ->route('admin.service.index')
+                ->with('error', 'Failed to delete service: ' . $e->getMessage());
+        }
     }
 }

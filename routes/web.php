@@ -7,6 +7,8 @@ use App\Http\Controllers\User\Auth\ExhibitionRegistrationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ServiceController;
 
+require __DIR__ . '/auth.php';
+
 // USER PAGES
 Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/', 'landing')->name('landing');
@@ -15,12 +17,10 @@ Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/visit', 'visit')->name('visit');
     Route::get('/partners', 'partners')->name('partners');
     Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blogShow/{article}')->name('article.show');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/services', 'services')->name('services');
 });
-
-// articles
-Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
 
 // exhibition
 Route::prefix('exhibition')->group(function () {
@@ -37,5 +37,3 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
     Route::resource('article', ArticleController::class);
     Route::resource('service', ServiceController::class);
 });
-
-require __DIR__ . '/auth.php';

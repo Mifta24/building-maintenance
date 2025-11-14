@@ -12,7 +12,8 @@ class Service extends Model
     use CloudinaryImageUpload, HasFactory, Notifiable;
 
     protected $fillable = [
-        'image',
+        'image_url',
+        'image_public_id',
         'name',
         'description',
     ];

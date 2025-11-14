@@ -68,9 +68,8 @@
                                 {{ $services->firstItem() + $loop->index }}
                             </th>
                             <td class="px-3 sm:px-6 py-3 sm:py-4">
-                                @if ($service->image)
-                                    <img src="{{ asset('images/services/' . $service->image) }}"
-                                        alt="{{ $service->name }}"
+                                @if ($service->image_url)
+                                    <img src="{{ asset($service->image_url) }}" alt="{{ $service->name }}"
                                         class="h-12 w-16 sm:h-16 sm:w-24 object-cover rounded">
                                 @else
                                     <div

@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Services\CloudinaryService;
 use Illuminate\Http\Request;
-use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Support\Facades\DB;
-
+use Exception;
 
 class ArticleController extends Controller
 {
@@ -42,7 +41,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'headline' => 'required|string|max:255',
             'lead' => 'required|string|max:255',
             'body' => 'required|string',
@@ -60,7 +59,7 @@ class ArticleController extends Controller
             }
 
             $validated['image_url'] = $uploadResult['secure_url'];
-            $validated['public_id'] = $uploadResult['public_id'];
+            $validated['image_public_id'] = $uploadResult['public_id'];
         }
 
         Article::create($validated);
@@ -92,40 +91,36 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $validated = $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_url' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'headline' => 'required|string|max:255',
             'lead' => 'required|string|max:255',
             'body' => 'required|string',
         ]);
 
-        if ($request->hasFile('image')) {
-            try {
-                // Hapus gambar lama
-                if ($article->image_public_id) {
-                    Cloudinary::destroy($article->image_public_id);
-                }
-
-                // Upload gambar baru
-                $folder = config('cloudinary.folders.articles', 'articles');
-                $uploadedFile = Cloudinary::upload(
-                    $request->file('image')->getRealPath(),
-                    ['folder' => $folder]
-                );
-
-                $validated['image'] = $uploadedFile->getSecurePath();
-                $validated['image_public_id'] = $uploadedFile->getPublicId();
-            } catch (\Exception $e) {
-                return back()
-                    ->with('error', 'Upload failed: ' . $e->getMessage())
-                    ->withInput();
+        // Handle image upload if present
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            // Delete old image from Cloudinary if exists
+            if ($article->image_public_id) {
+                $this->cloudinaryService->deleteImage($article->image_public_id);
             }
+
+            $uploadResult = $this->cloudinaryService->uploadImage($request->file('image'), "building-maintenance/articles");
+
+            if (!$uploadResult['success']) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors(['image' => $uploadResult['error']]);
+            }
+
+            $validated['image_url'] = $uploadResult['secure_url'];
+            $validated['image_public_id'] = $uploadResult['public_id'];
         }
 
         $article->update($validated);
 
         return redirect()
             ->route('admin.article.index')
-            ->with('success', 'The article has been successfully updated');
+            ->with('success', 'Article successfully updated');
     }
 
     /**
@@ -134,20 +129,21 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         try {
-            // Hapus gambar dari Cloudinary
+            // Delete image from Cloudinary if exists
             if ($article->image_public_id) {
-                Cloudinary::destroy($article->image_public_id);
+                $this->cloudinaryService->deleteImage($article->image_public_id);
             }
 
-            // Hapus artikel dari database
+            // Delete article from database
             $article->delete();
 
             return redirect()
                 ->route('admin.article.index')
-                ->with('success', 'The article and its images have been successfully deleted');
+                ->with('success', 'Article successfully deleted');
         } catch (\Exception $e) {
-            return back()
-                ->with('error', 'Delete failed: ' . $e->getMessage());
+            return redirect()
+                ->route('admin.article.index')
+                ->with('error', 'Failed to delete article: ' . $e->getMessage());
         }
     }
 }

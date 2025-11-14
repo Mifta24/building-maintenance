@@ -1,8 +1,8 @@
 @props(['service'])
 
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
-    @if ($service->image)
-        <img src="{{ $service->thumbnail ?? $service->image }}" alt="{{ $service->name }}"
+    @if ($service->image_url)
+        <img src="{{ $service->thumbnail ?? $service->image_url }}" alt="{{ $service->name }}"
             class="w-full h-48 object-cover">
     @else
         <div class="w-full h-48 bg-gray-200 flex items-center justify-center">

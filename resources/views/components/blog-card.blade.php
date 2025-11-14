@@ -18,7 +18,7 @@
             {{ $article->lead }}
         </p>
         <div class="mt-auto flex justify-between items-center">
-            <a href="{{ route('article.show', $article) }}"
+            <a href="{{ route('pages.article.show', $article) }}"
                 class="bg-cyan-500 text-white px-4 py-2 rounded text-sm font-semibold hover:bg-cyan-600 transition-colors">続きを読む</a>
             <span class="text-sm text-gray-500">{{ $article->created_at->format('Y年n月j日') }}</span>
         </div>

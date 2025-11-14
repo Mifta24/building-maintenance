@@ -13,7 +13,7 @@ class Article extends Model
     use CloudinaryImageUpload, HasFactory, Notifiable;
 
     protected $fillable = [
-        'image',
+        'image_url',
         'image_public_id',
         'headline',
         'lead',

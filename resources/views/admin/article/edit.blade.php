@@ -48,7 +48,7 @@
                 @enderror
             </div>
 
-            <div x-data="{ imagePreview: '{{ $article->image ?? null }}' }">
+            <div x-data="{ imagePreview: '{{ $article->image_url ?? null }}' }">
                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Change Article
                     Image</label>
 

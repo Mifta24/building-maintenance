@@ -11,8 +11,8 @@
                     公開日 {{ $service->created_at->format('Y年n月j日') }}
                 </p>
 
-                @if ($service->image)
-                    <img src="{{ $service->medium_image ?? $service->image }}" alt="{{ $service->name }}"
+                @if ($service->image_url)
+                    <img src="{{ $service->medium_image ?? $service->image_url }}" alt="{{ $service->name }}"
                         class="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-lg mb-8">
                 @endif
 

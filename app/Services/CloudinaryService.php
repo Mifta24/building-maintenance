@@ -26,7 +26,7 @@ class CloudinaryService
     /**
      * Upload image to Cloudinary
      */
-    public function uploadImage(UploadedFile $file, string $folder = 'building-maintenance/articles')
+    public function uploadImage(UploadedFile $file, string $folder = 'building-maintenance')
     {
         try {
             // Upload menggunakan path file

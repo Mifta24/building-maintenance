@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="mt-12 text-center">
-                    <a href="{{ route('admin.article.index') }}"
+                    <a href="{{ route('pages.blog') }}#section-blog-posts"
                         class="inline-block bg-gray-800 text-white px-8 py-3 rounded-md font-semibold hover:bg-gray-700 transition-colors text-base">
                         &larr; 戻る
                     </a>

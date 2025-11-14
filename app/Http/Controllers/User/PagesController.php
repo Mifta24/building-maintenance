@@ -58,4 +58,9 @@ class PagesController extends Controller
 
         return view('user.services', compact('services'));
     }
+
+    public function blogShow(Article $article)
+    {
+        return view('user.article.show', compact('article'));
+    }
 }

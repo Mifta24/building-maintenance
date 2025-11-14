@@ -68,9 +68,8 @@
                                 {{ $articles->firstItem() + $loop->index }}
                             </th>
                             <td class="px-3 sm:px-6 py-3 sm:py-4">
-                                @if ($article->image)
-                                    <img src="{{ asset('images/articles/' . $article->image) }}"
-                                        alt="{{ $article->headline }}"
+                                @if ($article->image_url)
+                                    <img src="{{ $article->image_url }}" alt="{{ $article->headline }}"
                                         class="h-12 w-16 sm:h-16 sm:w-24 object-cover rounded">
                                 @else
                                     <div
@@ -90,6 +89,9 @@
                             </td>
                             <td class="px-3 sm:px-6 py-3 sm:py-4 text-right">
                                 <div class="flex justify-end items-center space-x-1 sm:space-x-2">
+                                    <a href="{{ route('admin.article.show', $article->id) }}"
+                                        class="font-medium text-green-600 hover:underline text-xs sm:text-sm">Detail</a>
+
                                     <a href="{{ route('admin.article.edit', $article->id) }}"
                                         class="font-medium text-blue-600 hover:underline text-xs sm:text-sm">Edit</a>
 
