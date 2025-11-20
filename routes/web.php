@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\Auth\ExhibitionRegistrationController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\ContactController as AdminContactController;
 
 require __DIR__ . '/auth.php';
 
@@ -36,4 +38,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'verified'])->group(
 
     Route::resource('article', ArticleController::class);
     Route::resource('service', ServiceController::class);
+    Route::resource('contacts', AdminContactController::class)->only(['index', 'show', 'destroy']);
 });
+
+// Public contact form submission
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

@@ -282,7 +282,11 @@
                 </div>
 
                 <div class="lg:w-7/12 lg:mt-4">
-                    <form action="#" method="POST" class="space-y-10">
+                    <form action="{{ route('contact.store') }}" method="POST" class="space-y-10">
+                        @csrf
+                        @if (session('success'))
+                            <div class="bg-green-100 text-green-800 p-3 rounded">{{ session('success') }}</div>
+                        @endif
                         <div>
                             <label for="name" class="block text-xl font-medium">氏名</label>
                             <input type="text" id="name" name="name"
@@ -296,8 +300,8 @@
                         </div>
                         <div>
                             <label for="message" class="block text-xl font-medium">メッセージ</label>
-                            <input type="text" id="message" name="message"
-                                class="w-full bg-transparent border-0 border-b-2 border-white pb-2 mt-2 focus:outline-none focus:border-cyan-300 transition-colors" />
+                            <textarea id="message" name="message" rows="5"
+                                class="w-full bg-transparent border-0 border-b-2 border-white pb-2 mt-2 focus:outline-none focus:border-cyan-300 transition-colors"></textarea>
                         </div>
                         <div class="pt-6">
                             <button type="submit"
