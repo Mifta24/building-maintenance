@@ -5,17 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        if (!auth()->user() || auth()->user()->role !== 'admin') {
+        if (!Auth::user() || Auth::user()->role !== 'admin') {
             abort(403);
         }
 
@@ -25,7 +21,7 @@ class ContactController extends Controller
 
     public function show(Contact $contact)
     {
-        if (!auth()->user() || auth()->user()->role !== 'admin') {
+        if (!Auth::user() || Auth::user()->role !== 'admin') {
             abort(403);
         }
 
@@ -34,7 +30,7 @@ class ContactController extends Controller
 
     public function destroy(Contact $contact)
     {
-        if (!auth()->user() || auth()->user()->role !== 'admin') {
+        if (!Auth::user() || Auth::user()->role !== 'admin') {
             abort(403);
         }
 

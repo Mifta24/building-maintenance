@@ -28,7 +28,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Kartu Jumlah Service -->
         <div class="bg-white rounded-lg shadow p-4 sm:p-6">
             <div class="flex items-center">
@@ -44,6 +43,62 @@
                     <p class="text-xs sm:text-sm font-medium text-gray-500">Total Services</p>
                     <p class="text-xl sm:text-2xl font-bold text-gray-900">{{ $totalServices }}</p>
                 </div>
+            </div>
+        </div>
+        <!-- Kartu Jumlah Contacts -->
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6">
+            <div class="flex items-center">
+                <div class="p-2 sm:p-3 rounded-full bg-yellow-500 bg-opacity-20">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-yellow-600" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 12H8m0 0l3-3m-3 3l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div class="ml-3 sm:ml-4">
+                    <p class="text-xs sm:text-sm font-medium text-gray-500">Total Contacts</p>
+                    <p class="text-xl sm:text-2xl font-bold text-gray-900">{{ $totalContacts ?? 0 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Recent contacts list --}}
+    <div class="mt-6">
+        <div class="bg-white rounded-lg shadow p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Recent Contact Messages</h3>
+            <p class="mt-1 text-sm sm:text-base text-gray-600">Latest messages submitted through the contact form.</p>
+
+            <div class="mt-4">
+                @if (!empty($recentContacts) && $recentContacts->count())
+                    <ul class="space-y-3">
+                        @foreach ($recentContacts as $c)
+                            <li class="flex items-center justify-between border-b pb-2">
+                                <div>
+                                    <p class="font-medium">{{ $c->name }} <span class="text-sm text-gray-500">—
+                                            {{ $c->email }}</span></p>
+                                    <p class="text-sm text-gray-500">
+                                        {{ \Illuminate\Support\Carbon::parse($c->created_at)->format('Y-m-d H:i') }}</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <a href="{{ route('admin.contacts.show', $c->id) }}" class="text-blue-600">View</a>
+                                    <form action="{{ route('admin.contacts.destroy', $c->id) }}" method="POST"
+                                        onsubmit="return confirm('Delete this message?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600">Delete</button>
+                                    </form>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <div class="mt-4">
+                        <a href="{{ route('admin.contacts.index') }}" class="text-sm text-gray-700">View all
+                            messages</a>
+                    </div>
+                @else
+                    <p class="text-gray-500">No recent messages.</p>
+                @endif
             </div>
         </div>
     </div>

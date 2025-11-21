@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.admin-app>
     <div class="container mx-auto py-8">
         <h1 class="text-2xl font-bold mb-4">Contact Message #{{ $contact->id }}</h1>
 
@@ -22,4 +20,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layouts.admin-app>
