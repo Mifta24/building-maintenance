@@ -24,6 +24,10 @@
             </a>
             <a href="{{ route('pages.contact') }}"
                 class="text-gray-600 font-bold hover:text-blue-500 transition-colors">お問い合わせ</a>
+            @if (auth()->check() && auth()->user()->role === 'admin')
+                <a href="{{ route('admin.index') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors">管理者ダッシュボード</a>
+            @endif
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -54,6 +58,10 @@
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ブログ</a>
                 <a href="{{ route('pages.contact') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2">お問い合わせ</a>
+                @if (auth()->check() && auth()->user()->role === 'admin')
+                    <a href="{{ route('admin.index') }}"
+                        class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2">管理者ダッシュボード</a>
+                @endif
             </nav>
         </div>
     </div>
