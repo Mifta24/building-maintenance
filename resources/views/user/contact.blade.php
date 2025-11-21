@@ -79,7 +79,11 @@
 
                     <!-- Form -->
                     <div>
-                        <form action="#" method="POST">
+                        <form action="{{ route('contact.store') }}" method="POST">
+                            @csrf
+                            @if (session('success'))
+                                <div class="bg-green-100 text-green-800 p-3 rounded">{{ session('success') }}</div>
+                            @endif
                             <div class="space-y-6">
                                 <div>
                                     <label for="name"
