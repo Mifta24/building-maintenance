@@ -22,6 +22,10 @@
                         <a href="{{ route('pages.about') }}" class="hover:text-gray-300 hover:underline">会社概要</a>
                     </li>
                     <li>
+                        <a href="{{ route('pages.customer-harassment-policy') }}"
+                            class="hover:text-gray-300 hover:underline">カスタマーハラスメント対応方針</a>
+                    </li>
+                    <li>
                         <a href="{{ route('pages.blog') }}" class="hover:text-gray-300 hover:underline">ブログ</a>
                     </li>
                     <li>

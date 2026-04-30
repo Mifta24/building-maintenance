@@ -15,6 +15,7 @@ require __DIR__ . '/auth.php';
 Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/', 'landing')->name('landing');
     Route::get('/about', 'about')->name('about');
+    Route::get('/customer-harassment-policy', 'customerHarassmentPolicy')->name('customer-harassment-policy');
     Route::get('/exhibit', 'exhibit')->name('exhibit');
     Route::get('/visit', 'visit')->name('visit');
     Route::get('/partners', 'partners')->name('partners');
@@ -23,6 +24,8 @@ Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/services', 'services')->name('services');
 });
+
+Route::redirect('/customer-harassment', '/customer-harassment-policy');
 
 // exhibition
 Route::prefix('exhibition')->group(function () {

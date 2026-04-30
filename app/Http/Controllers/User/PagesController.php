@@ -21,6 +21,11 @@ class PagesController extends Controller
         return view('user.about');
     }
 
+    public function customerHarassmentPolicy()
+    {
+        return view('user.customer-harassment-policy');
+    }
+
     public function exhibit()
     {
         return view('user.exhibit');

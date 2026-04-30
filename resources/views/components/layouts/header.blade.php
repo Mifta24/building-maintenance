@@ -19,6 +19,9 @@
             <a href="{{ route('pages.about') }}"
                 class="text-gray-600 font-bold hover:text-blue-500 transition-colors">会社概要
             </a>
+            <a href="{{ route('pages.customer-harassment-policy') }}"
+                class="text-gray-600 font-bold hover:text-blue-500 transition-colors">カスタマーハラスメント対応方針
+            </a>
             <a href="{{ route('pages.blog') }}"
                 class="text-gray-600 font-bold hover:text-blue-500 transition-colors">ブログ
             </a>
@@ -54,6 +57,8 @@
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">パートナー</a>
                 <a href="{{ route('pages.about') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">会社概要</a>
+                <a href="{{ route('pages.customer-harassment-policy') }}"
+                    class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">カスハラ対応方針</a>
                 <a href="{{ route('pages.blog') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ブログ</a>
                 <a href="{{ route('pages.contact') }}"

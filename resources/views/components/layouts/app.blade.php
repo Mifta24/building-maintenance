@@ -1,5 +1,6 @@
 @props([
     'title' => ' ',
+    'description' => null,
 ])
 
 <!DOCTYPE html>
@@ -12,6 +13,9 @@
     <title>
         {{ $title }}
     </title>
+    @if ($description)
+        <meta name="description" content="{{ $description }}">
+    @endif
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('images/favicons/logo-dark.ico') }}">
