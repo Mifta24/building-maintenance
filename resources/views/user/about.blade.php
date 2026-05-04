@@ -10,7 +10,8 @@
                 会社概要
             </h1>
             <p class="text-lg md:text-xl lg:text-2xl mt-4 max-w-3xl mx-auto">
-                KS設備株式会社について、その使命とビルメンテナンスにおける卓越性への取り組みをご覧ください。
+                株式会社 KS設備
+について、その使命とビルメンテナンスにおける卓越性への取り組みをご覧ください。
             </p>
         </div>
     </section>
@@ -38,7 +39,7 @@
                                     社名
                                 </dt>
                                 <dd class="text-gray-700 mt-1 text-base md:text-lg">
-                                    KS設備株式会社
+                                    株式会社 KS設備
                                 </dd>
                             </div>
                             <div>
@@ -51,7 +52,7 @@
                                     代表者
                                 </dt>
                                 <dd class="text-gray-700 mt-1 text-base md:text-lg">
-                                    佐々木 健二
+                                    佐々木　健次
                                 </dd>
                             </div>
                             <div>
