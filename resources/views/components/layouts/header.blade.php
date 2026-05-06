@@ -1,6 +1,5 @@
-<header class="w-full relative z-50 md:pt-6 transition-all duration-300">
-    <div
-        class="bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative w-full py-4 px-6 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl md:mx-auto md:rounded-full md:py-3 md:px-8">
+<header class="w-full relative z-50 bg-white/95 backdrop-blur-sm shadow transition-all duration-300">
+    <div class="mx-auto flex justify-between items-center w-full max-w-7xl px-6 py-4 md:py-3 md:px-8">
         <div>
 
             <a href="{{ route('pages.landing') }}" class="text-xl font-bold text-gray-800">
@@ -48,8 +47,8 @@
         </div>
     </div>
 
-    <div id="mobile-menu" class="md:hidden hidden mt-4 max-w-5xl mx-auto px-4">
-        <div class="bg-white/95 text-center backdrop-blur-sm rounded-2xl shadow-lg py-4 px-6">
+    <div id="mobile-menu" class="md:hidden hidden mt-2 px-6 pb-4">
+        <div class="bg-white/95 text-center backdrop-blur-sm rounded-2xl shadow py-4 px-6">
             <nav class="flex flex-col space-y-4">
                 <a href="{{ route('pages.landing') }}"
                     class="text-gray-600 font-bold hover:text-blue-500 transition-colors py-2 border-b border-gray-100 last:border-b-0">ホーム</a>
