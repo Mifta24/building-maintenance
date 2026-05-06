@@ -45,7 +45,7 @@
                         日本のビル設備の未来をリードする
                     </p>
                     <h1 class="text-4xl md:text-6xl font-bold leading-tight mt-10 md:mt-[61px]">
-                        特別なき専門性によるビルメンテナンス
+                        特別な専門性によるビルメンテナンス
                     </h1>
                     <p class="text-xl md:text-2xl leading-tight mt-[30px] max-w-[768px] mx-auto lg:mx-0">
                         ビルの管理において、信頼に妥協は許されません。
