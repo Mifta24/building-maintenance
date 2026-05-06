@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="mt-3 pt-3 border-t border-gray-700">
+        <div class="mt-8 pt-4 border-t border-gray-700">
             <p class="text-sm text-gray-400">
                 © 2025 KS Equipment Co., Ltd. All Rights Reserved.
             </p>
