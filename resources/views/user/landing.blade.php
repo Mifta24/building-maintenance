@@ -118,8 +118,8 @@
 
     <!-- ABOUT SECTION -->
     <section id="section-about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center gap-8 max-w-6xl">
-            <div class="flex-1 w-full max-w-[520px]">
+        <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1 w-full lg:max-w-[520px] xl:max-w-[600px] 2xl:max-w-[680px]">
                 <h2 class="text-xl font-bold text-[#003355] mb-4">
                     株式会社 KS設備について
                 </h2>
@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="flex-1 w-full max-w-[560px]">
+            <div class="flex-1 w-full lg:max-w-[560px] xl:max-w-[680px] 2xl:max-w-[760px]">
                 <img src="{{ asset('images/landing/12f871d57343edbdc73d2bc8d9e215e4231c4624.png') }}" alt="City View"
                     class="rounded-md shadow-lg object-cover w-full h-full" />
             </div>
