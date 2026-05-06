@@ -11,8 +11,7 @@
                 当社ブログ
             </h1>
             <p class="text-lg md:text-xl lg:text-2xl mt-4 max-w-3xl mx-auto">
-                KS
-                Equipmentチームによる最新ニュース、プロジェクト紹介、専門的な見解をお届けします。
+                KS設備チームによる最新ニュース、プロジェクト紹介、専門的な見解をお届けします。
             </p>
         </div>
     </section>

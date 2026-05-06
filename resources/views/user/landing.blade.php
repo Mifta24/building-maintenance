@@ -45,7 +45,7 @@
                         日本のビル設備の未来をリードする
                     </p>
                     <h1 class="text-4xl md:text-6xl font-bold leading-tight mt-10 md:mt-[61px]">
-                        比類なき専門性によるビルメンテナンス
+                        特別なき専門性によるビルメンテナンス
                     </h1>
                     <p class="text-xl md:text-2xl leading-tight mt-[30px] max-w-[768px] mx-auto lg:mx-0">
                         ビルの管理において、信頼に妥協は許されません。
@@ -121,7 +121,7 @@
         <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-1">
                 <h2 class="text-xl font-bold text-[#003355] mb-4">
-                    KS Equipment株式会社について
+                   株式会社 KS設備について
                 </h2>
                 <p class="text-gray-800 font-semibold mb-3">
                     ビル管理において、信頼は決して妥協してはいけません。
@@ -253,13 +253,13 @@
                     </div>
 
                     <p class="mt-8 text-base">
-                        ご質問、サービスサポート、またはパートナーシップのご希望についてはKS
-                        Equipment株式会社までご連絡ください。お手伝いできることを楽しみにしております。
+                        ご質問、サービスサポート、またはパートナーシップのご希望についてはKS設備株式会社までご連絡ください。お手伝いできることを楽しみにしております。
                     </p>
 
                     <div class="mt-8">
                         <img src="{{ asset('images/logo/logo2.png') }}" class="w-24 h-auto" />
-                        {{-- <h3 class="text-3xl font-bold mb-12">KS設備株式会社</h3> --}}
+                        <h3 class="text-3xl font-bold mb-12">株式会社 KS設備
+</h3>
                     </div>
 
                     <div class="mt-8 space-y-3 text-lg">

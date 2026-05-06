@@ -32,6 +32,11 @@
                         </p>
 
                         <div class="space-y-6 text-base md:text-lg">
+                            <div class="flex-items-start ml-4">
+                                <p class="text-lg font-bold">
+                                    株式会社 KS設備
+                                </p>
+                            </div>
                             <div class="flex items-start">
                                 <svg class="w-6 h-6 text-[#005f99] mt-1 mr-4 flex-shrink-0" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
