@@ -1,9 +1,9 @@
-<footer class="bg-[#212121] text-white font-sans">
+<footer class="bg-[#212121] text-white font-sans pt-8">
     <div class="container mx-auto px-6 pt-10 pb-5">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
             <!-- Kolom 1: Logo -->
             <div>
-                <img src="{{ asset('images/logo/logo1.png') }}" class="mt-2 w-24 h-auto" />
+                <img src="{{ asset('images/logo/logo2.png') }}" class="mt-2 w-24 h-auto" />
             </div>
 
             <!-- Kolom 2: クイックリンク (ホーム, パートナーのみ) -->
