@@ -1,4 +1,4 @@
-<header class="w-full fixed top-0 z-50 md:pt-6 transition-all duration-300">
+<header class="w-full relative z-50 md:pt-6 transition-all duration-300">
     <div
         class="bg-white/95 backdrop-blur-sm shadow-lg flex justify-between items-center relative w-full py-4 px-6 md:max-w-5xl lg:max-w-6xl xl:max-w-7xl md:mx-auto md:rounded-full md:py-3 md:px-8">
         <div>

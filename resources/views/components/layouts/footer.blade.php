@@ -1,5 +1,5 @@
 <footer class="bg-[#212121] text-white font-sans">
-    <div class="container mx-auto px-6 py-12">
+    <div class="container mx-auto px-6 pt-10 pb-5">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
             <div class="md:col-span-2">
                 <div>
@@ -52,7 +52,7 @@
         </div>
 
         <!-- Copyright section moved to bottom -->
-        <div class="mt-8 pt-8 border-t border-gray-700">
+        <div class="mt-3 pt-3 border-t border-gray-700">
             <p class="text-sm text-gray-400">
                 © 2025 KS Equipment Co., Ltd. All Rights Reserved.
             </p>

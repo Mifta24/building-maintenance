@@ -118,10 +118,10 @@
 
     <!-- ABOUT SECTION -->
     <section id="section-about" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center gap-8">
-            <div class="flex-1">
+        <div class="container mx-auto px-4 lg:px-6 flex flex-col md:flex-row items-center gap-8 max-w-6xl">
+            <div class="flex-1 w-full max-w-[520px]">
                 <h2 class="text-xl font-bold text-[#003355] mb-4">
-                   株式会社 KS設備について
+                    株式会社 KS設備について
                 </h2>
                 <p class="text-gray-800 font-semibold mb-3">
                     ビル管理において、信頼は決して妥協してはいけません。
@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="flex-1">
+            <div class="flex-1 w-full max-w-[560px]">
                 <img src="{{ asset('images/landing/12f871d57343edbdc73d2bc8d9e215e4231c4624.png') }}" alt="City View"
                     class="rounded-md shadow-lg object-cover w-full h-full" />
             </div>
@@ -237,7 +237,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="section-contact" class="py-24 relative text-white font-sans">
+    <section id="section-contact" class="scroll-mt-24 py-24 relative text-white font-sans">
         <div class="absolute inset-0 -z-10">
             <img src="images/57918c7c238ece855591a13c827f50cdbfaa23fa.png" class="w-full h-full object-cover"
                 alt="Abstract blue background" />
@@ -259,7 +259,7 @@
                     <div class="mt-8">
                         <img src="{{ asset('images/logo/logo2.png') }}" class="w-24 h-auto" />
                         <h3 class="text-3xl font-bold mb-12">株式会社 KS設備
-</h3>
+                        </h3>
                     </div>
 
                     <div class="mt-8 space-y-3 text-lg">
